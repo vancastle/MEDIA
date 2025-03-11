@@ -1,1 +1,16 @@
-// Specific CSS for your home-page
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.container {
+  max-width: 90%;
+  margin-top: 60px;
+}
+
+.container p {
+  margin-top: 60px;
+}

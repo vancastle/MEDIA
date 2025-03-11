@@ -79,7 +79,9 @@ end
 
 thomas = User.first
 
-10.times do
+patients = []
+
+15.times do
   patient = Patient.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -90,4 +92,10 @@ thomas = User.first
   )
   patient.user = thomas
   patient.save!
+
+  patients << patient
 end
+
+# TODO: consultations : a venir date du jour + passées + futures
+# TODO: assignations : avec differents statuts
+# TODO: messages : uniquement sur une assignation

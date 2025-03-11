@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :diagnostics, through: :consultations
   has_many :assignations
   has_many :messages
+
+  # TODO: validation specialty dans liste prédéfinie
 end

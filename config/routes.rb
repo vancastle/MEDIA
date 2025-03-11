@@ -2,17 +2,21 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :patients, only: %i[index show] do
-    resources :consultations, only: %i[new create]
+  resources :consultations, only: [:new, :create] do
+    resources :diagnostics, only: [:index, :new, :create]
   end
 
-  resources :consultations, only: %i[index show] do
-    resources :diagnostics, only: %i[new create]
+  resources :diagnostics, only: [:new, :show] do
+    member do
+      patch :select
+    end
+
+    resources :assignations, only: [:new, :create]
   end
 
-  resources :diagnostics, only: %i[index show] do
-    resources :assignations, only: :create
+  resources :assignations, only: [:index, :show] do
+    resources :messages, only: [:index, :create]
   end
 
-  resources :assignations, only: %i[show edit update]
+  resources :patients, only: %i[index show]
 end

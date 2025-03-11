@@ -3,6 +3,8 @@ class Diagnostic < ApplicationRecord
   has_many :assignations, dependent: :destroy
 
   validates :description, presence: true
+
+  # TODO: validation specialty dans liste prédéfinie (la meme que sur User)
   validates :speciality, presence: true
 
   validates :selected, inclusion: { in: [true, false] }

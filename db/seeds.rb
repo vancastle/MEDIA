@@ -2,7 +2,7 @@
 # Assignation.destroy_all
 # Diagnostic.destroy_all
 # Consultation.destroy_all
-# Patient.destroy_all
+Patient.destroy_all
 User.destroy_all
 
 # User seed
@@ -75,4 +75,19 @@ count = doctors_first_names.count
     password: password,
     specialty: doctors_specialties[index]
   )
+end
+
+thomas = User.first
+
+10.times do
+  patient = Patient.new(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    address: Faker::Address.full_address,
+    date_of_birth: Faker::Date.birthday(min_age: 12, max_age: 99),
+    gender: Faker::Gender.type,
+    phone_number: Faker::PhoneNumber.phone_number
+  )
+  patient.user = thomas
+  patient.save!
 end

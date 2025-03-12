@@ -1,1 +1,28 @@
 <h1>Welcome to patients#index</h1>
+
+<%# montrer la liste des patient %>
+<ul class="list-group list-group-flush" >
+  <% @patients.each do |patient| %>
+    <li class="list-group-item">
+
+      <div class="">
+        <div class="row">
+          <div class="col-8 d-flex">
+            <div class="column d-flex flex-column align-items-start">
+              <h5><%= patient.first_name %> <%= patient.last_name %></h5>
+              <p><%= patient.date_of_birth %></p>
+            </div>
+          </div>
+
+          <div class="col-4 d-flex justify-content-end">
+            <button class="">
+              details
+              <% patient_path(patient) %>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </li>
+  <% end %>
+</ul>

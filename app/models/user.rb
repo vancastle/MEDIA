@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+
+  SPECIALTIES = %w[generalist neurologist urologist dermatologist]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -10,5 +12,5 @@ class User < ApplicationRecord
   has_many :assignations
   has_many :messages
 
-  # TODO: validation specialty dans liste prédéfinie
+  validates :specialty, presence: true, inclusion: { in: SPECIALTIES }
 end

@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-inverse navbar-bottom">
   <div class="container-fluid">
       <%= link_to root_path, class: "navbar-brand brand-bold" do %>
         <%= 'MED-IA' %>
@@ -26,9 +26,18 @@
                     <i class="fa-solid fa-user"></i>
                   </a>
                   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <%= link_to "My Decks", my_decks_path, class: "dropdown-item" %>
-                    <%= link_to "My Bookings", bookings_path, class: "dropdown-item" %>
-                    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+                    <%= link_to diagnostics_path, class: "dropdown-item" do %>
+                      <img src="../navbar-icon-diagnostiques.svg" alt="Diagnostiques">
+                    <% end %>
+                    <%= link_to echanges_path, class: "dropdown-item" do %>
+                      <img src="../navbar-icon-echanges.svg" alt="Echanges">
+                    <% end %>
+                    <%= link_to patients_index_path, class: "dropdown-item" do %>
+                      <img src="../navbar-icon-dossier-patient-black.svg" alt="Dossiers Patients">
+                    <% end %>
+                    <%= link_to profile_path, class: "dropdown-item" do %>
+                      <img src="../navbar-icon-profile.svg" alt="Profile">
+                    <% end %>
                   </div>
                 </li>
               <% else %>

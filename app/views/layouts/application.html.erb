@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Media</title>
+    <title>Med-IA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,12 +10,33 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <div class="page-container">
-      <%= render "shared/navbar" %>
-      <main id="main-content">
-        <%= yield %>
-      </main>
-    </div>
+   <%= render 'shared/navbar' %>
+  <body class="flex flex-col min-h-screen bg-sky-950">
+
+    <header class="sticky top-0">
+      <%= render 'shared/navbar' %>
+    </header>
+
+    <main class="flex-grow p-4 md:p-8 mx-auto max-w-7xl">
+      <%= yield %>
+    </main>
+
+    <footer></footer>
+
+    <nav class="sticky bottom-0 px-6 py-3 w-full flex items-center md:hidden justify-around bg-sky-900">
+      <%= link_to diagnostics_path do %>
+        <%= inline_svg_tag 'images/navbar-icon-diagnostiques.svg', class: 'h-8 w-8' %>
+      <% end %>
+      <%= link_to echanges_path do %>0
+        <%= inline_svg_tag 'images/navbar-icon-echanges.svg', class: 'h-8 w-8' %>
+      <% end %>
+      <%= link_to patients_index_path do %>
+        <%= image_tag 'images/navbar-icon-dossier-patient-black.svg', class: 'w-8 h-8' %>
+      <% end %>
+      <%= link_to search_path do %>
+        <%= inline_svg_tag 'images/navbar-icon-profile.svg', class: 'h-8 w-8' %>
+      <% end %>
+    </nav>
+
   </body>
 </html>

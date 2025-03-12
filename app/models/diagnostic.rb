@@ -5,7 +5,7 @@ class Diagnostic < ApplicationRecord
   validates :description, presence: true
 
   # TODO: validation specialty dans liste prédéfinie (la meme que sur User)
-  validates :speciality, presence: true
+  validates :specialty, presence: true
 
   validates :selected, inclusion: { in: [true, false] }
   validates :specialist_needed, inclusion: { in: [true, false] }

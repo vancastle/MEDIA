@@ -14,3 +14,26 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+.patient-card {
+  h5 {
+    font-size: 0.8rem;
+    padding: 0px;
+    margin-bottom: -0.1em;
+  }
+  p {
+    font-size: 0.8rem;
+    padding: 0px;
+    color: grey;
+  }
+}
+
+.patient-card {
+  margin-bottom: -20px;
+}
+
+.margin-correction {
+  margin-top: -3px;
+}
+
+

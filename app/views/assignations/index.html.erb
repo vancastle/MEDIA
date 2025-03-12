@@ -1,0 +1,10 @@
+<h1>Welcome to assignations#index</h1>
+
+<ul>
+  <% @assignations.each do |assignation| %>
+    <li><%= link_to "Assignation #{assignation.id}", assignation_path(assignation) %></li>
+    <p><strong>Titre:</strong> <%= assignation.title %></p>
+    <p><strong>Status:</strong> <%= assignation.status %></p>
+    <p><strong>Créée le:</strong> <%= assignation.created_at.strftime("%d %b %Y %H:%M") %></p>
+  <% end %>
+</ul>

@@ -1,5 +1,5 @@
 <div class="container">
-  <h1><%= image_tag("Logo.png", width: 350, height: 180) %></h1>
+  <h1><%= image_tag("med-ia_logo_removebg.png", width: 320, height: 245) %></h1>
   <p>Diagnostics plus rapides et plus précis!</p>
   <div class="input-group d-flex justify-content-center">
     <div class="form-outline search-container" data-mdb-input-init>
@@ -8,5 +8,20 @@
       </div>
       <input id="search-input" type="search" class="form-control search-input" placeholder="Rechercher...">
     </div>
+
+    <div class="button-container w-100">
+      <div class="button-icon">
+        <%= image_tag "icon-echanges-white.svg", width: "100%", height: "100%" %>
+      </div>
+      <%= link_to "Demande d'avis", "#", class: "btn btn-med text-start w-100" %>
+    </div>
+
+    <div class="button-container w-100">
+      <div class="button-icon">
+        <%= image_tag "icon-dossier-patient-white.svg", width: "100%", height: "100%" %>
+      </div>
+      <%= link_to "Dossiers patients", "#", class: "btn btn-med text-start w-100" %>
+    </div>
+
   </div>
 </div>

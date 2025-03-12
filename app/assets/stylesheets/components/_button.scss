@@ -60,3 +60,23 @@
       transform: translateY(-50%);
     }
   }
+
+  .btn-small {
+    background-color: #8BBFA7;
+    color: white;
+    padding: 8px 8px;
+    font-size: 0.7rem;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  /// a effacer avant de push////
+
+  .btn-med:active {
+    background-color: #26694a;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }

@@ -37,10 +37,10 @@
   font-size: 24px;
 }
 
-.btn-med:hover {
-  background-color: #26694a;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+.btn-med:active {
+  background-color: #26694a !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 15px rgb(243, 241, 241) !important;
   }
 
 .button-container {

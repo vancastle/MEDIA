@@ -1,51 +1,17 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-inverse navbar-bottom">
-  <div class="container-fluid">
-      <%= link_to root_path, class: "navbar-brand brand-bold" do %>
-        <%= 'MED-IA' %>
-      <% end %>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto">
-              <% if user_signed_in? %>
-                <li class="nav-item active">
-                  <%= link_to "#", class: "nav-link" do %>
-                    <i class="fa-solid fa-house"></i>
-                  <% end %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "#", class: "nav-link" do %>
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  <% end %>
-                </li>
-                <li class="nav-item dropdown">
-                  <a href="#" class="nav-link" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa-solid fa-user"></i>
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <%= link_to diagnostics_path, class: "dropdown-item" do %>
-                      <img src="../navbar-icon-diagnostiques.svg" alt="Diagnostiques">
-                    <% end %>
-                    <%= link_to echanges_path, class: "dropdown-item" do %>
-                      <img src="../navbar-icon-echanges.svg" alt="Echanges">
-                    <% end %>
-                    <%= link_to patients_index_path, class: "dropdown-item" do %>
-                      <img src="../navbar-icon-dossier-patient-black.svg" alt="Dossiers Patients">
-                    <% end %>
-                    <%= link_to profile_path, class: "dropdown-item" do %>
-                      <img src="../navbar-icon-profile.svg" alt="Profile">
-                    <% end %>
-                  </div>
-                </li>
-              <% else %>
-                <li class="nav-item">
-                  <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
+<div class="navbar">
+  <div class="navbar-links">
+    <div>
+      <%= link_to image_tag("icon-diag.svg", width: "100%", height: "100%"), "#" %>
+    </div>
+    <div>
+      <%= link_to image_tag("icon-echanges-black.svg", width: "100%", height: "100%"), "#"  %>
+    </div>
+    <div>
+      <%= link_to image_tag("icon-dossier-patient-black.svg", width: "100%", height: "100%"), "#" %>
+    </div>
+    <div>
+      <%= link_to image_tag("icon-profil.svg", width: "100%", height: "100%"), "#" %>
+    </div>
   </div>
 </div>

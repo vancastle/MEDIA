@@ -13,4 +13,10 @@ html, body {
 
 .container p {
   margin-top: 60px;
+  font-size: 30px;
+}
+
+img, svg {
+  vertical-align: middle;
+  object-fit: cover;
 }

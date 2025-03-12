@@ -3,6 +3,5 @@ class Assignation < ApplicationRecord
   belongs_to :diagnostic
   has_many :messages
 
-  # TODO: validation statuses dans liste prédéfinie
-  validates :status, presence: true
+  validates :status, presence: true, inclusion: { in: %w[accepted declined pending] }
 end

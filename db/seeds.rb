@@ -1,7 +1,7 @@
-# Message.destroy_all
-# Assignation.destroy_all
-# Diagnostic.destroy_all
-# Consultation.destroy_all
+Message.destroy_all
+Assignation.destroy_all
+Diagnostic.destroy_all
+Consultation.destroy_all
 Patient.destroy_all
 User.destroy_all
 
@@ -49,8 +49,8 @@ doctors_addresses = [
 ]
 
 doctors_specialties = [
-  "",
-  "",
+  "generalist",
+  "generalist",
   "neurologist",
   "neurologist",
   "neurologist",
@@ -78,9 +78,11 @@ count = doctors_first_names.count
 end
 
 thomas = User.first
+paul = User.find_by(first_name: "pierre", last_name: "penhard")
+pierre = User.find_by(first_name: "paul", last_name: "portier")
+cecile = User.find_by(first_name: "cecile", last_name: "veneziani")
 
-patients = []
-
+# Patient seed
 15.times do
   patient = Patient.new(
     first_name: Faker::Name.first_name,
@@ -92,10 +94,86 @@ patients = []
   )
   patient.user = thomas
   patient.save!
-
-  patients << patient
 end
 
-# TODO: consultations : a venir date du jour + passées + futures
-# TODO: assignations : avec differents statuts
-# TODO: messages : uniquement sur une assignation
+patients = Patient.all
+
+# Consultation seed
+
+Consultation.create!(
+  user_id: thomas.id,
+  patient_id: patients[0].id,
+  starts_at: DateTime.new(2025, 3, 14, 12, 30)
+)
+
+Consultation.create!(
+  user_id: thomas.id,
+  patient_id: patients[1].id,
+  starts_at: DateTime.new(2025, 3, 14, 12, 15)
+)
+
+Consultation.create!(
+  user_id: thomas.id,
+  patient_id: patients[2].id,
+  starts_at: DateTime.new(2025, 3, 14, 12, 45)
+)
+
+consultations = Consultation.all
+
+# Diagnostic seed
+3.times do
+  Diagnostic.create!(
+    description: Faker::Lorem.paragraph,
+    specialty: "dermatologist",
+    consultation_id: consultations.first.id
+  )
+end
+
+diagnostic = Diagnostic.first
+
+# Assignation seed
+# statuses = ["accepted", "pending", "declined"]
+Assignation.create!(
+  user_id: paul.id,
+  diagnostic_id: diagnostic.id,
+  status: "declined"
+)
+
+Assignation.create!(
+  user_id: pierre.id,
+  diagnostic_id: diagnostic.id,
+  status: "pending"
+)
+
+assignation = Assignation.create!(
+  user_id: cecile.id,
+  diagnostic_id: diagnostic.id,
+  status: "accepted"
+)
+
+patient = patients.first
+
+# Message Seed
+Message.create!(
+  content: "Bonjour Dr. Veneziani, je me permets de vous transmettre le dossier d'un patient. Auriez-vous de la disponibilité ?",
+  assignation_id: assignation.id,
+  user_id: thomas.id
+)
+
+Message.create!(
+  content: diagnostic.description,
+  assignation_id: assignation.id,
+  user_id: thomas.id
+)
+
+Message.create!(
+  content: "prénom: #{patient.first_name},\n nom: #{patient.last_name},\n adresse: #{patient.address},\n date de naissance: #{patient.date_of_birth},\n genre: #{patient.gender},\n numéro de téléphone: #{patient.phone_number}",
+  assignation_id: assignation.id,
+  user_id: thomas.id
+)
+
+Message.create!(
+  content: "Bonjour Dr. Desmoulins, j'ai des places libres, je peux prendre en charge votre patient dès la semaine prochaine.",
+  assignation_id: assignation.id,
+  user_id: cecile.id
+)

@@ -23,3 +23,40 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-size: 16px;
 }
+
+.btn-med {
+  background-color: #8BBFA7;
+  color: white;
+  padding: 12px 30px;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 24px;
+}
+
+.btn-med:hover {
+  background-color: #26694a;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+.button-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+
+    .button-icon {
+      z-index: 10;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 50%;
+      right: 40px;
+      transform: translateY(-50%);
+    }
+  }

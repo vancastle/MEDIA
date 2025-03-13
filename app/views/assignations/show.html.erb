@@ -1,4 +1,10 @@
-<h1>Assignation #<%= @assignation.id %></h1>
+ <div class="container2">
+  <%= link_to "<", assignations_path, class: "btn btn-med2" %>
+  <h1>Nom du patient</h1>
+</div>
+
+
+<h1>Assignation<%= @assignation.id %></h1>
 
 <p><strong>Nom du médecin :</strong> <%= @doctor.first_name.capitalize %> <%= @doctor.last_name.capitalize %></p>
 <p><strong>Spécialité :</strong> <%= @doctor.specialty.capitalize %></p>
@@ -17,6 +23,3 @@
 
 <h2>Diagnostic</h2>
 <p><%= @diagnostic.description %></p>
-
-
-<%= link_to "Retour", assignations_path, class: "btn btn-med" %>

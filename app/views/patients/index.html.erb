@@ -1,4 +1,19 @@
-<h1>Welcome to patients#index</h1>
+
+<div class="header">
+
+  <div class="icon">
+    <%= link_to image_tag("icon-chevron-left.svg", width: "100%", height: "100%"), "#" %>
+  </div>
+
+  <div>
+    <H2>Liste des patients</H2>
+  </div>
+
+  <div class="icon">
+      <%= link_to image_tag("icon-search.svg", width: "100%", height: "100%"), "#" %>
+  </div>
+
+</div>
 
 <ul class="list-group list-group-flush" >
   <% @patients.each do |patient| %>

@@ -1,10 +1,23 @@
-<h1>Welcome to assignations#index</h1>
+<div class="container2">
+  <%= link_to "<", assignations_path, class: "btn btn-med2" %>
+  <h1>Demande d'avis</h1>
+</div>
 
 <ul>
-  <% @assignations.each do |assignation| %>
-    <li><%= link_to "Assignation #{assignation.id}", assignation_path(assignation) %></li>
-    <p><strong>Titre:</strong> <%= assignation.title %></p>
-    <p><strong>Status:</strong> <%= assignation.status %></p>
-    <p><strong>Créée le:</strong> <%= assignation.created_at.strftime("%d %b %Y %H:%M") %></p>
+ <% @assignations.each do |assignation| %>
+    <% doctor = assignation.user %> <!-- Médecin assigné -->
+    <% diagnostic = assignation.diagnostic %> <!-- Diagnostic lié -->
+    <% consultation = diagnostic.consultation %> <!-- Consultation liée -->
+    <% patient = consultation.patient %> <!-- Patient concerné -->
+    <li>
+      <%= link_to "Assignation #{assignation.id}", assignation_path(assignation) %>
+      <ul>
+        <li><strong>Nom du médecin :</strong> <%= doctor.first_name.capitalize %> <%= doctor.last_name.capitalize %></li>
+          <li><strong>Spécialité :</strong> <%= doctor.specialty.capitalize %></li>
+          <li><strong>Nom du patient :</strong> <%= patient.first_name.capitalize %> <%= patient.last_name.capitalize %></li>
+          <li><strong>Status :</strong> <%= assignation.status.capitalize %></li>
+          <li><strong>Date du rendez-vous :</strong> <%= consultation.starts_at.strftime("%d/%m/%Y %H:%M") %></li>
+      </ul>
+    </li>
   <% end %>
 </ul>

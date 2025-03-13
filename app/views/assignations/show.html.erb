@@ -1,1 +1,25 @@
-<h1>Welcome to assignations#show</h1>
+ <div class="container2">
+  <%= link_to "<", assignations_path, class: "btn btn-med2" %>
+  <h1>Nom du patient</h1>
+</div>
+
+
+<h1>Assignation<%= @assignation.id %></h1>
+
+<p><strong>Nom du médecin :</strong> <%= @doctor.first_name.capitalize %> <%= @doctor.last_name.capitalize %></p>
+<p><strong>Spécialité :</strong> <%= @doctor.specialty.capitalize %></p>
+<p><strong>Status :</strong> <%= @assignation.status.capitalize %></p>
+<%= link_to "Contacter", assignations_path, class: "btn btn-med" %>
+
+
+
+<h2>Détails patient</h2>
+<p><strong>Nom du patient :</strong> <%= @patient.first_name.capitalize %> <%= @patient.last_name.capitalize %></p>
+<p><strong>Date de naissance :</strong> <%= @patient.date_of_birth %></p>
+<p><strong>Genre :</strong> <%= @patient.gender %></p>
+<p><strong>Numéro de téléphone :</strong> <%= @patient.phone_number %></p>
+<p><strong>Adresse :</strong> <%= @patient.address %></p>
+<p><strong>Historique médicale :</strong></p>
+
+<h2>Diagnostic</h2>
+<p><%= @diagnostic.description %></p>

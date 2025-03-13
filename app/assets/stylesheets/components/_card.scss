@@ -1,0 +1,30 @@
+.custom-card {
+  width: 22rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+}
+
+.custom-card h6 {
+  color: grey;
+}
+
+.custom-card img {
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+}
+
+.card-body li {
+  margin-bottom: 8px;
+}
+
+
+.assignation-link {
+  text-decoration: none;
+}

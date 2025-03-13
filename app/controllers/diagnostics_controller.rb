@@ -2,7 +2,8 @@ class DiagnosticsController < ApplicationController
   def index; end
 
   def show
-    @diagnostic = Dia
+    @diagnostic = Diagnostic.find(params[:id])
+    @doctors = User.where(specialty: @diagnostic.specialty).limit(3)
   end
 
   def new; end

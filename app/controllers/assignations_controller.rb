@@ -6,6 +6,10 @@ class AssignationsController < ApplicationController
   end
 
   def show
+    @doctor = @assignation.user
+    @diagnostic = @assignation.diagnostic
+    @consultation = @diagnostic.consultation
+    @patient = @consultation.patient
   end
 
   def new

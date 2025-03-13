@@ -3,5 +3,6 @@ class PatientsController < ApplicationController
     @patients = Patient.all
   end
 
-  def show; end
+  def show
+  end
 end

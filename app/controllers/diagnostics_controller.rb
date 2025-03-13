@@ -5,7 +5,9 @@ class DiagnosticsController < ApplicationController
     @diagnostics = Diagnostic.where(consultation_id: params[:consultation_id])
   end
 
-  def show; end
+  def show
+    @diagnostic = Dia
+  end
 
   def new
     @diagnostic = Diagnostic.new

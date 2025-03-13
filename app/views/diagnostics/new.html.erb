@@ -1,6 +1,12 @@
 <% if @consultation %>
 
-  <h1>You got the right url</h1>
+  <div class="container">
+    <h3><%= @consultation.patient.name %></h3>
+    <%= simple_form_for @consultation, url: consultation_diagnostics_path(@consultation), method: "post" do |f| %>
+      <%= f.input :prompt, label: "Prompt", placeholder: "Rechercher" %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
 
 <% else %>
 
@@ -10,7 +16,7 @@
       <div class="row">
         <%= link_to new_consultation_diagnostic_path(consultation) do %>
           <div class="card">
-            <h5 class="card-title"><%= consultation.patient.first_name %></h5>
+            <h5 class="card-title"><%= consultation.patient.name %></h5>
             <p class="card-body"><%= consultation.starts_at %></p>
           </div>
         <% end %>

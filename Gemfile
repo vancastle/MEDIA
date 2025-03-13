@@ -54,6 +54,7 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem "devise"
 gem "faker"
+gem "ruby-openai"
 
 
 group :development, :test do

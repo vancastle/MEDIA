@@ -1,21 +1,22 @@
+<div class="header d-flex justify-content-between align-items-center" style="border: none;">
 
-<div class="header">
-
-  <div class="icon">
-    <%= link_to image_tag("icon-chevron-left.svg", width: "100%", height: "100%"), "#" %>
+  <div class="icon" style="margin-left: 10px; margin-bottom: 25px; border: none;">
+    <%= link_to root_path do %>
+      <%= image_tag("icon-chevron-left.svg", width: "32px", height: "32px") %>
+    <% end %>
   </div>
 
-  <div>
-    <H2>Liste des patients</H2>
+  <div class="text-center flex-grow-1" style="border: none; margin-left: 30px;">
+    <h1 style="font-size: 20px; border: none;"><strong>Liste des patients</strong></h1>
   </div>
 
-  <div class="icon">
-      <%= link_to image_tag("icon-search.svg", width: "100%", height: "100%"), "#" %>
+  <div class="icon" style="margin-right: 40px; margin-bottom: 25px; border: none;">
+    <%= link_to image_tag("icon-search.svg", width: "32px", height: "32px"), "#" %>
   </div>
 
 </div>
 
-<ul class="list-group list-group-flush" >
+<ul class="list-group list-group-flush margin-top: 10px" >
   <% @patients.each do |patient| %>
     <li class="list-group-item margin-correction">
 

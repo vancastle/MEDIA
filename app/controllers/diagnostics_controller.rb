@@ -21,10 +21,10 @@ class DiagnosticsController < ApplicationController
   def create
     @consultation.update(consultation_params)
 
-    choices(@consultation).each do |choice|
+    results(@consultation).each do |result|
       @diagnostic = Diagnostic.new(
-        specialty: "Boisson gazeuse",
-        description: choice["message"]["content"]
+        specialty: result["specialty"],
+        description: result["diagnostic"]
       )
       @diagnostic.consultation = @consultation
 
@@ -44,19 +44,18 @@ class DiagnosticsController < ApplicationController
     params.require(:consultation).permit(:prompt)
   end
 
-  def choices(consultation)
+  def results(consultation)
     client = OpenAI::Client.new
     chatgpt_response = client.chat(
       parameters: {
         model: "gpt-4o-mini",
         messages: [{
           role: "user",
-          content: consultation.prompt
+          content: consultation.request
         }],
-        n: 3
       }
     )
 
-    chatgpt_response["choices"]
+    JSON.parse(chatgpt_response["choices"][0]["message"]["content"])
   end
 end

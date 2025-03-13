@@ -7,10 +7,44 @@ class Consultation < ApplicationRecord
   validates :starts_at, presence: true
 
   def request
-    return "Tu es un expert en medecine
+    return <<~PROMPT
+      Tu es un expert en medecine
+      Je vais te donner des symptomes
+      Voici la liste des spécialites connues : #{(User::SPECIALTIES - ["generalist"]).join(", ")}
 
-      Voici les symptomes : #{prompt}
+      Peux tu me proposer 3 diagnostics si jamais les symptomes correspondent a une specialité ?
 
-      Propose moi un seul diagnostique. Je ne veux pas de listing."
+      Format attendu :
+
+      [
+        {
+          "specialty": "urologue",
+          "diagnostic": "ici le diagnostic"
+        },
+        {
+          "specialty": "urologue",
+          "diagnostic": "ici le diagnostic"
+        },
+        {
+          "specialty": "urologue",
+          "diagnostic": "ici le diagnostic"
+        }
+      ]
+
+
+      Si jamais le diagnostic correpsond a aucune specialite connue, format attendu :
+
+      [
+        {
+          specialty: "unkown",
+          suggested_specialty: "ici la suugestion",
+          diagnostic: "ici le diagnostic"
+        }
+      ]
+
+      Réponds uniquement avec le format attendu.
+
+      Voici les symptômes : #{prompt}
+    PROMPT
   end
 end

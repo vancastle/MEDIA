@@ -1,13 +1,30 @@
-<div class="container">
-  <h3>Vos rendez-vous</h3>
+<div class="container2">
+  <%= link_to root_path, class: "btn btn-med2" do %>
+      <%= image_tag("icon-chevron-left.svg") %>
+  <% end %>
+  <h3 style="margin-left: 20px; margin-top: 15px;">Nouvelle recherche</h3>
+</div>
+
+<h1 class="textfront">Vos rendez-vous</h1>
+
+<section class="cards-container">
   <% @consultations.each do |consultation| %>
-    <div class="row">
-      <%= link_to new_consultation_diagnostic_path(consultation) do %>
-        <div class="card">
-          <h5 class="card-title"><%= consultation.patient.name %></h5>
-          <p class="card-body"><%= consultation.starts_at %></p>
+    <%= link_to new_consultation_diagnostic_path(consultation), class: "consultation-link" do %>
+        <div class="card custom-card2">
+          <div class="card-body">
+            <div class="list-group-item">
+              <ul class="list-unstyled mt-3">
+                <li><h3><%= consultation.patient.name %></h3></li>
+                <li><p><%= consultation.starts_at %></p></li>
+                <li><p><%= consultation.patient.date_of_birth %></p></li>
+              </ul>
+            </div>
+          </div>
         </div>
       <% end %>
-    </div>
   <% end %>
+</section>
+
+<div class="button-container w-100">
+    <%= link_to "Rechercher un patient", patients_path, class: "btn btn-med w-95 mb-4" %>
 </div>

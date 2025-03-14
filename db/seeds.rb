@@ -177,3 +177,5 @@ Message.create!(
   assignation_id: assignation.id,
   user_id: cecile.id
 )
+
+puts "Finished"

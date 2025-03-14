@@ -2,7 +2,7 @@ class DiagnosticsController < ApplicationController
   before_action :set_consultation, only: %i[create]
 
   def index
-    @diagnostics = Diagnostic.where(consultation_id: params[:consultation_id])
+    @diagnostics = Diagnostic.where(consultation_id: params[:consultation_id]).last(3)
   end
 
   def show
@@ -14,6 +14,7 @@ class DiagnosticsController < ApplicationController
     @diagnostic = Diagnostic.new
     if params[:consultation_id]
       @consultation = Consultation.find(params[:consultation_id])
+      @consultation.prompt = ""
     else
       @consultations = Consultation.where(user: current_user).order(:starts_at)
     end

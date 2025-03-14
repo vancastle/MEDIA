@@ -1,0 +1,45 @@
+.card-diagnostic {
+  padding: 1em;
+  margin: 1em;
+  border-radius: 1em;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+.header-diagnostic {
+  font-size: 1rem;
+  padding-top: 4px;
+  border-bottom: 0.5px solid grey;
+}
+
+
+.diagnostic-specialist-card {
+  list-style: none;
+  display: flex;
+  padding: 0.5em 1em ;
+  border: 0.5px solid grey;
+  border-radius: 1em;
+  margin-top: 1em;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+  justify-content: space-between
+}
+
+.diagnostic-specialist-card p {
+  text-align: right;
+  font-size: 0.8em;
+  color: grey;
+}
+
+.diagnostic-specialist-card:active {
+  background-color: #8BBFA7;
+}
+
+.diagnostic-specialist-card h5 {
+  
+}

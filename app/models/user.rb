@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  SPECIALTIES = %w[generaliste neurologue urologue dermatologue]
+  SPECIALTIES = %w[généraliste neurologue urologue dermatologue]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

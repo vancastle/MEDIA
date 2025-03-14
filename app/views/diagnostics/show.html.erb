@@ -5,32 +5,33 @@
   <div>
     <H2>Recherche de diagnostique</H2>
   </div>
-  <div class="icon">
+    <div class="icon">
   </div>
 </div>
-<div class="card-diagnostic">
-  <div class="1">
-    <h2>Diagnostique</h2>
-    <p><%= @diagnostic.description %></p>
-    <div class="header-diagnostic">
-      <h3>Sélectionner un specialiste</h3>
-    </div>
-  </div>
 
-  <ul>
-  <% @doctors.each do |doctor| %>
-    <%= link_to new_diagnostic_assignation_path(@diagnostic, doctor_id: doctor.id) do %>
-      <li class="diagnostic-specialist-card">
-        <div>
-          <h5><%= doctor.first_name %></h5>
-          <h5><%= doctor.last_name %></h5>
-          <h6><%= doctor.specialty %></h6>
-        </div>
-          <p>
-            <%= doctor.address %>
-          </p>
-      </li>
-    <% end %>
-  <% end %>
-  </ul>
+<div class="card-diagnostic">
+    <div class="1">
+      <h2>Diagnostique</h2>
+      <p><%= @diagnostic.description %></p>
+      <div class="header-diagnostic">
+        <h3>Sélectionner un specialiste</h3>
+      </div>
+    </div>
+
+    <ul>
+      <% @doctors.each do |doctor| %>
+        <%= link_to new_diagnostic_assignation_path(@diagnostic, doctor_id: doctor.id) do %>
+          <li class="diagnostic-specialist-card">
+            <div>
+              <h5><%= doctor.first_name %></h5>
+              <h5><%= doctor.last_name %></h5>
+              <h6><%= doctor.specialty %></h6>
+            </div>
+              <p>
+                <%= doctor.address %>
+              </p>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
 </div>

@@ -7,12 +7,17 @@
 
 <div class="container">
   <h3><strong style="color: #199A8E;"><%= @consultation.patient.name %></strong></h3>
-  <%= simple_form_for @consultation, url: consultation_diagnostics_path(@consultation), method: "post", html: { style: 'margin-top: 40px;' } do |f| %>
+  <%= simple_form_for @consultation,
+                      url: consultation_diagnostics_path(@consultation),
+                      method: "post",
+                      html: {
+                        style: 'margin-top: 40px;',
+                      } do |f| %>
     <div style="text-align: center;">
       <%= f.input :prompt, label: "Quels sont les symptômes du patient?", placeholder: "Rechercher...", input_html: { style: 'height: 150px; width: 364px; border: 1px solid #d3d3d3; border-radius: 20px; display: block; margin: 0 auto; font-style: italic;' } %>
     </div>
     <div style="text-align: right; margin-top: 10px;">
-      <%= f.submit "Envoyer", style: "background-color: #8BBFA7; border: 1px solid #d3d3d3; border-radius: 20px; padding: 10px 20px; color: white;" %>
+      <%= f.button :submit, "Envoyer", style: "background-color: #8BBFA7; border: 1px solid #d3d3d3; border-radius: 20px; padding: 10px 20px; color: white;" %>
     </div>
   <% end %>
 </div>

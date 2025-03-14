@@ -15,14 +15,19 @@ class AssignationsController < ApplicationController
   def new
     @diagnostic = Diagnostic.find(params[:diagnostic_id])
     @assignation = @diagnostic.assignations.build
+    @doctor = User.find(params[:doctor_id])
   end
 
   def create
     @diagnostic = Diagnostic.find(params[:diagnostic_id])
-    @assignation = @diagnostic.assignations.build(assignation_params)
+    @assignation = @diagnostic.assignations.build()
+    @assignation.status = "pending"
+
+    @doctor = User.find(params[:assignation][:doctor_id])
+    @assignation.user = @doctor
 
     if @assignation.save
-      redirect_to @assignation, notice: 'Assignation créée avec succès.'
+      redirect_to assignations_path, notice: 'Assignation créée avec succès.'
     else
       render :new
     end
@@ -32,9 +37,5 @@ class AssignationsController < ApplicationController
 
   def set_assignation
     @assignation = Assignation.find(params[:id])
-  end
-
-  def assignation_params
-    params.require(:assignation).permit(:status)
   end
 end

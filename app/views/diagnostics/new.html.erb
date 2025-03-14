@@ -1,1 +1,5 @@
-<h1>Welcome to diagnotics#new</h1>
+<% unless @consultation %>
+  <%= render "new_first_step" %>
+<% else %>
+  <%= render "new_second_step" %>
+<% end %>

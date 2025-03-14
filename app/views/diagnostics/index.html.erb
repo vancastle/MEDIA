@@ -1,1 +1,13 @@
-<h1>Welcome to diagnotics#index</h1>
+<div class="container">
+  <% @diagnostics.each do |diagnostic| %>
+    <div class="row">
+      <div class="card">
+        <h3 class="card-title">Résultat pour : </h3>
+        <div class="card-body">
+          <h6><%= diagnostic.specialty %> </h6>
+          <p> <%= diagnostic.description %> </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

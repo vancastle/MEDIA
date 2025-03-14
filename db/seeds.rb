@@ -124,7 +124,7 @@ consultations = Consultation.all
 3.times do
   Diagnostic.create!(
     description: Faker::Lorem.paragraph,
-    specialty: "dermatologist",
+    specialty: "dermatologue",
     consultation_id: consultations.first.id
   )
 end

@@ -49,17 +49,17 @@ doctors_addresses = [
 ]
 
 doctors_specialties = [
-  "generalist",
-  "generalist",
-  "neurologist",
-  "neurologist",
-  "neurologist",
-  "urologist",
-  "urologist",
-  "urologist",
-  "dermatologist",
-  "dermatologist",
-  "dermatologist"
+  "généraliste",
+  "généraliste",
+  "neurologue",
+  "neurologue",
+  "neurologue",
+  "urologue",
+  "urologue",
+  "urologue",
+  "dermatologue",
+  "dermatologue",
+  "dermatologue"
 ]
 
 count = doctors_first_names.count

@@ -1,5 +1,6 @@
 class Diagnostic < ApplicationRecord
   belongs_to :consultation
+  has_one :patient, through: :consultation
   has_many :assignations, dependent: :destroy
 
   validates :description, presence: true

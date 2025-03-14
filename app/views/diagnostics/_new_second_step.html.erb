@@ -1,0 +1,7 @@
+<div class="container">
+  <h3><%= @consultation.patient.name %></h3>
+  <%= simple_form_for @consultation, url: consultation_diagnostics_path(@consultation), method: "post" do |f| %>
+    <%= f.input :prompt, label: "Prompt", placeholder: "Rechercher" %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

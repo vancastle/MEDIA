@@ -1,27 +1,5 @@
-<% if @consultation %>
-
-  <div class="container">
-    <h3><%= @consultation.patient.name %></h3>
-    <%= simple_form_for @consultation, url: consultation_diagnostics_path(@consultation), method: "post" do |f| %>
-      <%= f.input :prompt, label: "Prompt", placeholder: "Rechercher" %>
-      <%= f.button :submit %>
-    <% end %>
-  </div>
-
+<% unless @consultation %>
+  <%= render "new_first_step" %>
 <% else %>
-
-  <div class="container">
-    <h3>Vos rendez-vous</h3>
-    <% @consultations.each do |consultation| %>
-      <div class="row">
-        <%= link_to new_consultation_diagnostic_path(consultation) do %>
-          <div class="card">
-            <h5 class="card-title"><%= consultation.patient.name %></h5>
-            <p class="card-body"><%= consultation.starts_at %></p>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-
+  <%= render "new_second_step" %>
 <% end %>

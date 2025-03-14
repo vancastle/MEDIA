@@ -1,1 +1,63 @@
-<h1>Welcome to assignations#new</h1>
+<div class="header">
+  <div class="icon">
+    <%= link_to image_tag("icon-chevron-left.svg", width: "100%", height: "100%"), "#" %>
+  </div>
+  <div>
+    <H2>Demande d'avis</H2>
+  </div>
+  <div class="icon">
+  </div>
+</div>
+
+<div class="card-diagnostic">
+  <div class="1">
+    <h2>Diagnostique</h2>
+    <p><%= @diagnostic.description %></p>
+    <div class="header-diagnostic">
+      <h3>Sélectionner un specialiste</h3>
+    </div>
+  </div>
+
+  <ul>
+    <li class="diagnostic-specialist-card">
+      <div>
+        <h5><%= @doctor.first_name %></h5>
+        <h5><%= @doctor.last_name %></h5>
+        <h6><%= @doctor.specialty %></h6>
+      </div>
+        <p>
+          <%= @doctor.address %>
+        </p>
+    </li>
+  </ul>
+
+  <button type="button" class="btn-med" data-toggle="modal" data-target="#exampleModal">
+    contacter
+  </button>
+
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Contacter Dr <%= @doctor.first_name %> <%= @doctor.last_name %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Le diagnostique du patient sera partagé au spécialiste
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-med" data-dismiss="modal">annuler</button>
+        <div class="">
+        <%= simple_form_for [@diagnostic, @assignation] do |form| %>
+          <%= form.input :doctor_id, as: :hidden, :input_html => { value: @doctor.id } %>
+          <%= form.submit 'contacter', class: 'btn-med' %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

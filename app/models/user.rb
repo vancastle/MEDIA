@@ -13,4 +13,8 @@ class User < ApplicationRecord
   has_many :messages
 
   validates :specialty, presence: true, inclusion: { in: SPECIALTIES }
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end

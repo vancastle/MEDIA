@@ -6,27 +6,27 @@
 </div>
 
 <section class="cards-container">
- <% @assignations.each do |assignation| %>
+  <% @assignations.each do |assignation| %>
     <% doctor = assignation.user %>
     <% diagnostic = assignation.diagnostic %>
     <% consultation = diagnostic.consultation %>
     <% patient = consultation.patient %>
 
-      <%= link_to assignation_path(assignation.id), class: "assignation-link" do %>
-        <div class="card custom-card">
-          <div class="card-body">
-            <div class="list-group-item">
-              <ul class="list-unstyled mt-3">
-                <li><h3>Dr. <%= doctor.first_name.capitalize %> <%= doctor.last_name.capitalize %></h3></li>
-                <li><h6><%= doctor.specialty.capitalize %></p></li>
-                <li><strong>Patient</strong> <p><%= patient.first_name.capitalize %> <%= patient.last_name.capitalize %></p></li>
-                <li><span class="badge bg-warning text-dark"><%= assignation.status.capitalize %></span></li>
-                <li><strong>Rendez-vous le </strong> <span class="text-muted"><%= consultation.starts_at.strftime("%d/%m/%Y %H:%M") %></span></li>
-                <li><%= image_tag("icon-lettre.svg", width: "100%", height: "100%") %></li>
-              </ul>
-            </div>
+    <%= link_to assignation_path(assignation.id), class: "assignation-link" do %>
+      <div class="card custom-card">
+        <div class="card-body">
+          <div class="list-group-item">
+            <ul class="list-unstyled mt-3">
+              <li><h3>Dr. <%= doctor.first_name.capitalize %> <%= doctor.last_name.capitalize %></h3></li>
+              <li><h6><%= doctor.specialty.capitalize %></p></li>
+              <li><strong>Patient</strong> <p><%= patient.first_name.capitalize %> <%= patient.last_name.capitalize %></p></li>
+              <li><span class="badge bg-warning text-dark"><%= assignation.status.capitalize %></span></li>
+              <li><strong>Rendez-vous le </strong> <span class="text-muted"><%= consultation.starts_at.strftime("%d/%m/%Y %H:%M") %></span></li>
+              <li><%= image_tag("icon-lettre.svg", width: "100%", height: "100%") %></li>
+            </ul>
           </div>
         </div>
-      <% end %>
+      </div>
+    <% end %>
   <% end %>
 </section>

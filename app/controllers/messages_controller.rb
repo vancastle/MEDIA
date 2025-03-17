@@ -1,6 +1,11 @@
 class MessagesController < ApplicationController
+  before_action :set_assignation, only: [:index, :create]
+
+  def index
+    @messages = Message.where(assignation_id: @assignation.id)
+    @message = Message.new
+  end
   def create
-    @assignation = Assignation.find(params[:assignation_id])
     @message = Message.new(message_params)
     @message.assignation = @assignation
     @message.user = current_user
@@ -21,6 +26,10 @@ class MessagesController < ApplicationController
   end
 
   private
+
+  def set_assignation
+    @assignation = Assignation.find(params[:assignation_id])
+  end
 
   def message_params
     params.require(:message).permit(:content)

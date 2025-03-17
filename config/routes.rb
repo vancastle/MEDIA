@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :assignations, only: [:index, :show] do
-    resources :messages, only: [:create]
+    resources :messages, only: [:index, :create]
   end
 
   resources :patients, only: %i[index show]

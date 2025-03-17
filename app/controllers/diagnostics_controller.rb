@@ -3,11 +3,11 @@ class DiagnosticsController < ApplicationController
 
   def index
     @diagnostics = Diagnostic.where(consultation_id: params[:consultation_id]).last(3)
+
   end
 
   def show
     @diagnostic = Diagnostic.find(params[:id])
-    @doctors = User.where(specialty: @diagnostic.specialty).limit(3)
   end
 
   def new

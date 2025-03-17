@@ -1,0 +1,30 @@
+
+
+.custom-card-consultation {
+  width: 20rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.consultation-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.consultation-details {
+  display: flex;
+  flex-direction: column;
+
+
+  h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.consultation-link {
+  text-decoration: none;
+}

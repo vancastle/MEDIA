@@ -2,7 +2,6 @@
   padding: 1em;
   margin: 1em;
   border-radius: 1em;
-  background-color: white;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -10,6 +9,11 @@
 
 ul {
   padding-left: 0px;
+
+    > a {
+      text-decoration: none;
+      color: inherit;
+    }
 }
 
 .header-diagnostic {
@@ -27,13 +31,19 @@ ul {
   border-radius: 1em;
   margin-top: 1em;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
-  justify-content: space-between
+  justify-content: space-between;
+  background-color: white;
+
+  h6 {
+    color: grey;
+  }
+
 }
 
 .diagnostic-specialist-card p {
   text-align: right;
   font-size: 0.8em;
-  color: grey;
+  color: black;
 }
 
 .diagnostic-specialist-card:active {

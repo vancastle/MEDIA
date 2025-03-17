@@ -5,43 +5,69 @@
   <h1>Nom du patient</h1>
 </div>
 
-<div class="d-flex card-assignation-status">
-  <div>
-    <p><strong>Nom du médecin :</strong> <%= @doctor.first_name.capitalize %> <%= @doctor.last_name.capitalize %></p>
-    <p><strong>Spécialité :</strong> <%= @doctor.specialty.capitalize %></p>
+<section class="cards-container">
+  <div class="card custom-card-accepted">
+        <div class="card-body">
+            <div class="accepted-card">
+                <div class="accepted-details">
+                    <h3>Dr. <%= @doctor.first_name.capitalize %> <%= @doctor.last_name.capitalize %></h3>
+                    <h6><%= @doctor.specialty.capitalize %></h6>
+                    <%# <h6><%= @doctor.address.capitalize %>
+                </div>
+                <p class="badge badge-success status-badge"><%= @assignation.status.capitalize %></p>
+            </div>
+                <%= link_to "Contacter", assignations_path, class: "fs-6 btn-small w-100" %>
+        </div>
   </div>
-  <div>
-    <p><strong>Status :</strong> <%= @assignation.status.capitalize %></p>
-    <%= link_to "Contacter", assignations_path, class: "btn-small" %>
-  </div>
-</div>
 
-<div class="header-diagnostic">
-  <h3>Détails patient</h3>
-</div>
-<div class="row p-3">
-  <div class="col text-start"><strong>Nom du patient</strong></div>
-  <div class="col text-end"><%= @patient.first_name.capitalize %></div>
-  <div class="w-100"></div>
-  <div class="col text-start"><strong>Date de naissance</strong></div>
-  <div class="col text-end"><%= @patient.date_of_birth %></div>
-  <div class="w-100"></div>
-  <div class="col text-start"><strong>Genre</strong></div>
-  <div class="col text-end"><%= @patient.gender %></div>
-  <div class="w-100"></div>
-  <div class="col text-start"><strong>Numéro de téléphone</strong></div>
-  <div class="col text-end"><%= @patient.phone_number %></div>
-  <div class="w-100"></div>
-  <div class="col text-start"><strong>Adresse</strong></div>
-  <div class="col text-end"><%= @patient.address %></div>
-</div>
-<div class="header-diagnostic">
-  <h3>Historique médical</h3>
-</div>
-<div class="card-diagnostic ">
-  <h2>Diagnostic</h2>
-  <p><%= @diagnostic.description %></p>
-</div>
+
+
+  <div class="card patient-card-details">
+          <div class="card-body">
+              <div class="accepted-card">
+                  <div class="accepted-details">
+
+
+                    <div class="header-diagnostic">
+                      <h3>Détails patient</h3>
+                    </div>
+
+                    <div class="row p-3">
+                      <div class="col-12 text-start border-bottom pb-2 mb-2">
+                        <p class="fw-bold"><%= @patient.first_name.capitalize %> <%= @patient.last_name.capitalize %></p>
+                      </div>
+                      <div class="col-12 text-start border-bottom pb-2 mb-2">
+                        <p><%= @patient.date_of_birth %></p>
+                      </div>
+                      <div class="col-12 text-start border-bottom pb-2 mb-2">
+                        <p><%= @patient.gender %></p>
+                      </div>
+                      <div class="col-12 text-start border-bottom pb-2 mb-2">
+                        <p>+ <%= @patient.phone_number %></p>
+                      </div>
+                      <div class="col-12 text-start border-bottom pb-2">
+                        <p><%= @patient.address %></p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+            </div>
+  </div>
+
+
+  <div class="card patient-card-historique">
+    <div class="card-body">
+      <div class="historique-details">
+        <div class="header-diagnostic">
+         <h3>Diagnostic</h3>
+        </div>
+          <p class= "p-3"><%= @diagnostic.description %></p>
+      </div>
+    </div>
+  </div>
+
+</section>
 
 <div class="container chat">
   <h1>The chat starts here</h1>

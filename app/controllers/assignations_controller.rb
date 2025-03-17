@@ -2,7 +2,7 @@ class AssignationsController < ApplicationController
   before_action :set_assignation, only: [:show]
 
   def index
-    @assignations = Assignation.all
+    @assignations = filter(Assignation.all)
   end
 
   def show
@@ -34,6 +34,10 @@ class AssignationsController < ApplicationController
   end
 
   private
+
+  def filter(assignations)
+    assignations.select { |assignation| assignation.diagnostic.consultation.user == current_user }
+  end
 
   def set_assignation
     @assignation = Assignation.find(params[:id])

@@ -26,7 +26,7 @@ class DiagnosticsController < ApplicationController
     results(@consultation).each do |result|
       @diagnostic = Diagnostic.new(
         specialty: result["specialty"],
-        description: result["diagnostic"]
+        description: result["description"]
       )
       @diagnostic.consultation = @consultation
 
@@ -51,10 +51,16 @@ class DiagnosticsController < ApplicationController
     chatgpt_response = client.chat(
       parameters: {
         model: "gpt-4o-mini",
-        messages: [{
-          role: "user",
-          content: consultation.request
-        }],
+        messages: [
+          {
+            role: "developer",
+            content: consultation.command
+          },
+          {
+            role: "user",
+            content: consultation.prompt
+          }
+        ],
       }
     )
 

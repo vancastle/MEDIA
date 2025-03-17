@@ -55,6 +55,7 @@ gem "sassc-rails"
 gem "devise"
 gem "faker"
 gem "ruby-openai"
+gem "solid_cable"
 
 
 group :development, :test do

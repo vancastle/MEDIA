@@ -12,11 +12,9 @@
   </div>
   <div>
     <p><strong>Status :</strong> <%= @assignation.status.capitalize %></p>
-    <%= link_to "Contacter", assignations_path, class: "btn-small" %>
+    <%= link_to "Contacter", assignation_messages_path(@assignation), class: "btn-small" %>
   </div>
 </div>
-
-
 
 <div class="header-diagnostic">
   <h3>Détails patient</h3>

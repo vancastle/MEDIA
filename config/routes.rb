@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     member do
       patch :select
     end
-    
+
     resources :assignations, only: [:new, :create]
   end
 

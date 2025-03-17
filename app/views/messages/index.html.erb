@@ -1,1 +1,15 @@
-<h1>Welcome to messages#index</h1>
+<div class="container chat">
+  <h1>Lancer la conversation</h1>
+
+  <div id="messages" class="messages">
+    <% @assignation.messages.each do |message| %>
+      <%= render "message", message: message, user: current_user %>
+    <% end %>
+  </div>
+
+  <%= simple_form_for [@assignation, @message], html: {class: "d-flex", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }} do |f| %>
+    <% other_user = current_user == @assignation.user ? @assignation.diagnostic.consultation.user : @assignation.user %>
+    <%= f.input :content, label: false, placeholder: "message à #{other_user.name}", wrapper_html: {class: "flex-grow-1"} %>
+    <%= f.submit "Envoyer", class: "btn btn-primary mb-3" %>
+  <% end %>
+</div>

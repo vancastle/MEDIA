@@ -1,139 +1,20 @@
 .custom-card {
-  position: relative;
   width: 22rem;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   background-color: white;
 }
 
-.assignation-card {
-  position: relative;
-  justify-content: flex-start;
-  align-items: flex-start;
-  display: flex;
-
-
-  img {
-    z-index: 10;
-    width: 30px;
-    height: 30px;
-  }
-
-  .badge-success {
-    background-color: #28a745;
-    color: white;
-    border-radius: 10px;
-
-  }
-
-  .badge-danger {
-    background-color: #dc3545;
-    color: white;
-    border-radius: 10px;
-  }
-
-  .badge-warning {
-    background-color: #ffc107;
-    color: black;
-    border-radius: 10px;
-  }
+.age {
+  margin: 0;
+  font-size: 14px;
+  color: gray;
 }
 
-.assignation-details {
-  justify-content: flex-start;
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-
-  h3 {
-    margin: 0;
-    font-size: 20px;
-    font-weight: bold;
-    color: black;
-    padding-bottom: 4px;
-  }
-
-  h6 {
-    color: grey;
-  }
-
-  p {
-    color: black;
-    font-size: 16px;
-    margin: 0;
-  }
-
+.time {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
 }
-
-
-.status-badge {
-  position: absolute;
-  top: 41px;
-  right: -9px;
-}
-
-.assignation-icon {
-  position: absolute;
-  bottom: 75px;
-  right: -10px;
-}
-
-.assignation-link {
-  text-decoration: none;
-}
-
-.consultation-link {
-  text-decoration: none;
-}
-
-.patient-card {
-  h5 {
-    font-size: 1rem;
-    padding: 0px;
-    margin-bottom: -0.1em;
-  }
-  p {
-    font-size: 0.8rem;
-    padding: 0px;
-    color: grey;
-  }
-}
-
-.custom-card2 {
-  width: 20rem;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: white;
-}
-
-.consultation-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.consultation-details {
-  display: flex;
-  flex-direction: column;
-
-
-  h3 {
-    margin: 0;
-    font-size: 20px;
-    font-weight: bold;
-  }
-}
-
-  .age {
-    margin: 0;
-    font-size: 14px;
-    color: gray;
-  }
-
-  .time {
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 0;
-  }

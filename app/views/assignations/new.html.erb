@@ -7,19 +7,19 @@
 
 <div class="card-diagnostic">
   <div class="1">
-    <h2>Diagnostique</h2>
+    <h2>Diagnostic</h2>
     <p><%= @diagnostic.description %></p>
     <div class="header-diagnostic">
-      <h3>Sélectionner un specialiste</h3>
+      <h3>Sélectionner un spécialiste</h3>
     </div>
   </div>
 
   <ul>
     <li class="diagnostic-specialist-card">
       <div>
-        <h5><%= @doctor.first_name %></h5>
-        <h5><%= @doctor.last_name %></h5>
-        <h6><%= @doctor.specialty %></h6>
+        <h5><%= @doctor.first_name.capitalize %></h5>
+        <h5><%= @doctor.last_name.capitalize %></h5>
+        <h6><%= @doctor.specialty.capitalize %></h6>
       </div>
         <p>
           <%= @doctor.address %>
@@ -28,7 +28,7 @@
   </ul>
 
   <button type="button" class="btn-med" data-toggle="modal" data-target="#exampleModal">
-    contacter
+    Contacter
   </button>
 
 </div>
@@ -43,14 +43,14 @@
         </button>
       </div>
       <div class="modal-body">
-        Le diagnostique du patient sera partagé au spécialiste
+        Le diagnostic du patient sera partagé avec le spécialiste
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn-med" data-dismiss="modal">annuler</button>
+        <button type="button" class="btn-med" data-dismiss="modal">Annuler</button>
         <div class="">
         <%= simple_form_for [@diagnostic, @assignation] do |form| %>
           <%= form.input :doctor_id, as: :hidden, :input_html => { value: @doctor.id } %>
-          <%= form.submit 'contacter', class: 'btn-med' %>
+          <%= form.submit 'Contacter', class: 'btn-med' %>
         <% end %>
         </div>
       </div>

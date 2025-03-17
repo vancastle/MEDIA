@@ -1,36 +1,82 @@
 .custom-card {
+  position: relative;
   width: 22rem;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
-}
-
-.custom-card2 {
-  width: 20rem;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
   background-color: white;
 }
 
-.custom-card:hover {
-  transform: translateY(-5px);
+.assignation-card {
+  position: relative;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+
+
+  img {
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+  }
+
+  .badge-success {
+    background-color: #28a745;
+    color: white;
+    border-radius: 10px;
+
+  }
+
+  .badge-danger {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 10px;
+  }
+
+  .badge-warning {
+    background-color: #ffc107;
+    color: black;
+    border-radius: 10px;
+  }
 }
 
-.custom-card h6 {
-  color: grey;
+.assignation-details {
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    padding-bottom: 4px;
+  }
+
+  h6 {
+    color: grey;
+  }
+
+  p {
+    color: black;
+    font-size: 16px;
+    margin: 0;
+  }
+
 }
 
-.custom-card img {
-  z-index: 10;
-  width: 30px;
-  height: 30px;
+
+.status-badge {
+  position: absolute;
+  top: 41px;
+  right: -9px;
 }
 
-.card-body li {
-  margin-bottom: 8px;
+.assignation-icon {
+  position: absolute;
+  bottom: 75px;
+  right: -10px;
 }
-
 
 .assignation-link {
   text-decoration: none;
@@ -51,6 +97,13 @@
     padding: 0px;
     color: grey;
   }
+}
+
+.custom-card2 {
+  width: 20rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
 }
 
 .consultation-card {

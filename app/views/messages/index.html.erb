@@ -1,15 +1,20 @@
-<div class="container chat">
-  <h1>Lancer la conversation</h1>
+<div class="container2">
+  <%= link_to assignations_path, class: "btn btn-med2" do %>
+      <%= image_tag("icon-chevron-left.svg") %>
+  <% end %>
+  <% other_user = current_user == @assignation.user ? @assignation.diagnostic.consultation.user : @assignation.user %>
+  <h4 style="margin-left: 35px; margin-top: 15px;"><%= other_user.name %></h4>
+</div>
 
-  <div id="messages" class="messages">
+<div class="container-fluid chat" style="width: 100%; margin-top: -28px; display: flex; flex-direction: column; height: 79vh;">
+  <div id="messages" class="messages" style="flex-grow: 1; overflow-y: auto;">
     <% @assignation.messages.each do |message| %>
       <%= render "message", message: message, user: current_user %>
     <% end %>
   </div>
-
-  <%= simple_form_for [@assignation, @message], html: {class: "d-flex", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }} do |f| %>
+  <%= simple_form_for [@assignation, @message], html: {class: "d-flex align-items", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }, style: "position: sticky; bottom: 0; background: white;"} do |f| %>
     <% other_user = current_user == @assignation.user ? @assignation.diagnostic.consultation.user : @assignation.user %>
-    <%= f.input :content, label: false, placeholder: "message à #{other_user.name}", wrapper_html: {class: "flex-grow-1"} %>
-    <%= f.submit "Envoyer", class: "btn btn-primary mb-3" %>
+    <%= f.input :content, label: false, placeholder: "Message à #{other_user.name}", wrapper_html: {class: "flex-grow-1"}, input_html: {style: "border-radius: 0.8rem"} %>
+    <%= f.submit "Envoyer", style: "background-color: #247E54; border: 1px solid #d3d3d3; border-radius: 0.8rem; color: white; margin-left: 10px; height: 71px;" %>
   <% end %>
 </div>

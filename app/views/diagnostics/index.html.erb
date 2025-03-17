@@ -19,21 +19,57 @@
 
 </div>
 
-<section class="cards-container mt-3">
-  <% @diagnostics.each do |diagnostic| %>
+<section data-controller="diagnostic">
+  <% @diagnostics.each_with_index do |diagnostic, index| %>
+    <%  doctors = User.where(specialty: diagnostic.specialty).limit(3) %>
 
-    <%= link_to diagnostic_path(diagnostic), class: "assignation-link" do %>
-      <div class="card custom-card">
-        <div class="card-body">
-          <div class="list-group-item">
-            <ul class="list-unstyled mt-3">
-              <li><h6>Specialité : <%= diagnostic.specialty %></h6></li>
-              <li><h6>Description :</h6></li>
-              <li><p><%= diagnostic.description %></p></li>
+
+    <div class="">
+      <div class="card-diagnostic">
+        <div class="list-group-item">
+          <ul class="list-unstyled mt-3">
+            <li><h2 class="">Specialité : <%= diagnostic.specialty %></h2></li>
+            <li><h6>Description :</h6></li>
+            <li><p><%= diagnostic.description %></p></li>
+          </ul>
+          <div class="button-container">
+            <button data-action="click->diagnostic#showdoctors" data-diagnostic-target="picked" class="btn-med " id="diagnostic-<%= index %>">
+              Choisir ce diagnostic
+            </button>
+          </div>
+
+          <div style="display: none" id="diagnostic-<%= index %>" data-diagnostic-target="diagnostic">
+            <div class="header-diagnostic">
+              <H2>Liste des spécialistes</H2>
+            </div>
+            <ul>
+              <% doctors.each do |doctor| %>
+                <div class="card-diagnostic-container">
+                  <%= link_to new_diagnostic_assignation_path(diagnostic, doctor_id: doctor.id) do %>
+                    <div class="diagnostic-specialist-card">
+                      <li >
+                        <div>
+                          <h5>Dr <%= doctor.first_name.capitalize %>
+                              <%= doctor.last_name.capitalize %>
+                          </h5>
+
+                          <h6><%= doctor.specialty.capitalize %></h6>
+                        </div>
+                        <div class="address">
+                          <p><%= doctor.address %></p>
+                        </div>
+                      </li>
+                    </div>
+                    <div>
+                      <div class="btn-container btn-small fix"><h6>Choisir ce spécialiste</h6></div>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
             </ul>
           </div>
         </div>
       </div>
-    <% end %>
+    </div>
   <% end %>
 </section>

@@ -8,11 +8,11 @@ class Consultation < ApplicationRecord
 
   def request
     return <<~PROMPT
-      Tu es un expert en medecine
-      Je vais te donner des symptomes
-      Voici la liste des spécialites connues : #{(User::SPECIALTIES - ["generalist"]).join(", ")}
+      Tu es un expert en médecine
+      Je vais te donner des symptômes
+      Voici la liste des spécialités connues : #{(User::SPECIALTIES - ["generalist"]).join(", ")}
 
-      Peux tu me proposer 3 diagnostics si jamais les symptomes correspondent a une specialité ?
+      Peux tu me proposer 3 diagnostics si jamais les symptômes correspondent a une spécialité ?
 
       Format attendu :
 
@@ -32,12 +32,12 @@ class Consultation < ApplicationRecord
       ]
 
 
-      Si jamais le diagnostic correpsond a aucune specialite connue, format attendu :
+      Si jamais le diagnostic correspond à aucune spécialité connue, format attendu :
 
       [
         {
-          specialty: "unkown",
-          suggested_specialty: "ici la suugestion",
+          specialty: "unknown",
+          suggested_specialty: "ici la suggestion",
           diagnostic: "ici le diagnostic"
         }
       ]

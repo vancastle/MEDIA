@@ -21,7 +21,7 @@
     <%= render 'shared/ios_pwa_links' %>
   </head>
 
-  <body>
+  <body data-current-user-id="<%= current_user ? current_user.id : "" %>">
     <div class="page-container">
       <%= render "shared/upperbar" %>
       <main id="main-content">

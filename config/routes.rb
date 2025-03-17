@@ -10,12 +10,12 @@ Rails.application.routes.draw do
     member do
       patch :select
     end
-    
+
     resources :assignations, only: [:new, :create]
   end
 
   resources :assignations, only: [:index, :show] do
-    resources :messages, only: [:index, :create]
+    resources :messages, only: [:create]
   end
 
   resources :patients, only: %i[index show]

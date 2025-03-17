@@ -10,7 +10,6 @@ class AssignationsController < ApplicationController
     @diagnostic = @assignation.diagnostic
     @consultation = @diagnostic.consultation
     @patient = @consultation.patient
-    @message = Message.new
   end
 
   def new

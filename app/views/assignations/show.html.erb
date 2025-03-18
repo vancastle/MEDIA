@@ -13,9 +13,8 @@
         <div class="accepted-details">
           <h3>Dr. <%= @doctor.first_name.capitalize %> <%= @doctor.last_name.capitalize %></h3>
           <h6><%= @doctor.specialty.capitalize %></h6>
-          <%# <h6><%= @doctor.address.capitalize %>
         </div>
-        <p class="badge badge-success status-badge"><%= @assignation.status.capitalize %></p>
+        <span class="badge <%= status_class(@assignation) %> status-badge"><%= @assignation.status.capitalize %></span>
       </div>
       <%= link_to "Contacter", assignation_messages_path(@assignation), class: "fs-6 btn-small w-100" %>
     </div>

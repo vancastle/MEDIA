@@ -24,14 +24,8 @@
               <p><strong>Rendez-vous le </strong><%= consultation.starts_at.strftime("%d/%m/%Y %H:%M") %></p>
             </div>
 
-            <% status_class = case assignation.status.downcase
-              when 'accepted' then 'badge-success'
-              when 'declined' then 'badge-danger'
-              when 'pending' then 'badge-warning'
-              end %>
-            <span class="badge <%= status_class %> status-badge"><%= assignation.status.capitalize %></span>
+            <span class="badge <%= status_class(assignation) %> status-badge"><%= assignation.status.capitalize %></span>
 
-            <%= image_tag("icon-lettre.svg", width: "100%", height: "100%", class: "assignation-icon") %>
             <%= image_tag("icon-lettre.svg", width: "100%", height: "100%", class: "assignation-icon") %>
           </div>
         </div>

@@ -9,13 +9,13 @@
   <div class="1">
     <h2>Diagnostic</h2>
     <p><%= @diagnostic.description %></p>
-    <div class="header-diagnostic">
-      <h3>Sélectionner un spécialiste</h3>
+    <div class="">
+      <h2>Sélectionner un spécialiste</h2>
     </div>
   </div>
 
   <ul>
-    <li class="diagnostic-specialist-card">
+    <li class="diagnostic-specialist-card card-diagnostic-container">
       <div>
         <h5><%= @doctor.first_name.capitalize %></h5>
         <h5><%= @doctor.last_name.capitalize %></h5>
@@ -33,25 +33,22 @@
 
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
+<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog card-modal" role="document">
+    <div class="modal-content radius">
+      <div class="modal-header d-flex justify-content-center border-bottom-0">
         <h5 class="modal-title text-center" id="exampleModalLabel">Contacter Dr <%= @doctor.first_name %> <%= @doctor.last_name %></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
       <div class="modal-body">
         Le dossier du patient sera partagé avec le spécialiste
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer d-flex justify-content-around border-top-0">
         <button type="button" class="btn-med" data-dismiss="modal">Annuler</button>
-        <div class="">
-        <%= simple_form_for [@diagnostic, @assignation] do |form| %>
-          <%= form.input :doctor_id, as: :hidden, :input_html => { value: @doctor.id } %>
-          <%= form.submit 'Contacter', class: 'btn-med' %>
-        <% end %>
+        <div class="m-0">
+          <%= simple_form_for [@diagnostic, @assignation] do |form| %>
+            <%= form.input :doctor_id, as: :hidden, :input_html => { value: @doctor.id } %>
+            <%= form.submit 'Contacter', class: 'btn-med'%><%#  class: 'btn-med' %>
+          <% end %>
         </div>
       </div>
     </div>

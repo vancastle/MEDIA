@@ -1,9 +1,9 @@
 .custom-card-assignation {
   position: relative;
   width: 22rem;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  border-radius: 0.8em;
+  box-shadow: $shadow-default;
+  background-color: $white;
 }
 
 .assignation-card {
@@ -20,21 +20,21 @@
   }
 
   .badge-success {
-    background-color: #28a745;
-    color: white;
+    background-color: $blue;
+    color: $blue-dark;
     border-radius: 10px;
 
   }
 
   .badge-danger {
-    background-color: #dc3545;
-    color: white;
+    background-color: $red;
+    color: $red-dark;
     border-radius: 10px;
   }
 
   .badge-warning {
-    background-color: #ffc107;
-    color: black;
+    background-color: $yellow;
+    color: $yellow-dark;
     border-radius: 10px;
   }
 
@@ -55,16 +55,16 @@
     margin: 0;
     font-size: 20px;
     font-weight: bold;
-    color: black;
+    color: $black;
     padding-bottom: 4px;
   }
 
   h6 {
-    color: grey;
+    color: $gray;
   }
 
   p {
-    color: black;
+    color: $black;
     font-size: 16px;
     margin: 0;
   }

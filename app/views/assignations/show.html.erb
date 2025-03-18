@@ -1,8 +1,9 @@
  <div class="container2">
-   <%= link_to assignations_path, class: "btn btn-med2" do %>
+   <%= link_to assignations_path, class: "" do %>
       <%= image_tag("icon-chevron-left.svg") %>
    <% end %>
-  <h1>Nom du patient</h1>
+  <h3><%= @patient.name %></h3>
+  <div></div>
 </div>
 
 <section class="cards-container">

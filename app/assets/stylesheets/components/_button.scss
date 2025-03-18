@@ -2,17 +2,28 @@
     text-align: center;
     margin-bottom: 20px;
 }
-
+// pour la nav bar du parcours diagnostic
 .container2 {
+  display: flex;
+  justify-content: space-around;
   display: flex;
   align-items: center;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1em;
   background-color: $white ;
   color: black;
   padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: $shadow-default;
+  font-size: 1em;
 }
+
+.container2 > h3 {
+  font-size: 1.2em;
+  margin: 0px;
+  color: $black;
+  font-weight: 400;
+}
+// fin navbar parcours diagnostic
 
 .container2 h1 {
   padding: 12px 12px;

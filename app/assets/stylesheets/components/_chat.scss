@@ -1,6 +1,6 @@
 .chat {
   background: white;
-  margin-top: 9px;
+  margin-top: 3px;
   height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
@@ -8,7 +8,6 @@
   flex-grow: 1;
 
   h1 {
-    border-bottom: 1px solid $gray-200;
     margin-bottom: 0;
     padding: 1rem;
   }
@@ -20,11 +19,10 @@
   }
 
   #new_message {
-    border-top: 1px solid $gray-200;
-    padding: 1rem;
+    padding-top: 10px;
 
     .form-group {
-      margin-bottom: 0;
+      margin-bottom: 5px;
     }
   }
 
@@ -44,20 +42,26 @@
   .message-content {
     border-radius: 1rem;
     margin-bottom: 1rem;
-    padding: 0.5rem;
-    max-width: 70%;
+    padding: 1rem;
+    max-width: 75%;
     width: fit-content;
     word-wrap: break-word;
+    font-size: 1rem;
+    text-align: left;
   }
 
   .message.sent .message-content {
     align-self: flex-start;
-    background: $blue;
+    background: #37A271;
     color: $light-gray;
+    padding: 15px;
+    margin: 3px;
   }
 
   .message.received .message-content {
     align-self: flex-end;
     background: $gray-200;
+    padding: 15px;
+    margin: 3px;
   }
 }

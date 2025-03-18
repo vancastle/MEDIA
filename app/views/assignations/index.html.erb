@@ -1,6 +1,6 @@
 <div class="container2">
   <%= link_to root_path, class: "btn btn-med2" do %>
-      <%= image_tag("icon-chevron-left.svg") %>
+    <%= image_tag("icon-chevron-left.svg") %>
   <% end %>
   <h3 style="margin-left: 20px; margin-top: 15px;">Échanges entre médecins</h3>
 </div>
@@ -13,25 +13,25 @@
     <% patient = consultation.patient %>
 
     <%= link_to assignation_path(assignation.id), class: "assignation-link" do %>
-      <div class="card custom-card">
+      <div class="card custom-card-assignation">
         <div class="card-body">
           <div class="assignation-card">
-              <div class="assignation-details">
-                  <h3>Dr. <%= doctor.first_name.capitalize %> <%= doctor.last_name.capitalize %></h3>
-                  <h6><%= doctor.specialty.capitalize %></h6>
-                  <p><strong>Patient : </strong><%= patient.first_name.capitalize %> <%= patient.last_name.capitalize %></p>
-                  <p><strong>Rendez-vous le </strong><%= consultation.starts_at.strftime("%d/%m/%Y %H:%M") %></p>
-              </div>
+            <div class="assignation-details">
+              <h3>Dr. <%= doctor.first_name.capitalize %> <%= doctor.last_name.capitalize %></h3>
+              <h6><%= doctor.specialty.capitalize %></h6>
+              <p><strong>Patient : </strong><%= patient.first_name.capitalize %> <%= patient.last_name.capitalize %></p>
+              <p><strong>Rendez-vous le </strong><%= consultation.starts_at.strftime("%d/%m/%Y %H:%M") %></p>
+            </div>
 
-               <% status_class = case assignation.status.downcase
-                 when 'accepted' then 'badge-success'
-                 when 'declined' then 'badge-danger'
-                 when 'pending' then 'badge-warning'
-                 end %>
-               <span class="badge <%= status_class %> status-badge"><%= assignation.status.capitalize %></span>
+            <% status_class = case assignation.status.downcase
+              when 'accepted' then 'badge-success'
+              when 'declined' then 'badge-danger'
+              when 'pending' then 'badge-warning'
+              end %>
+            <span class="badge <%= status_class %> status-badge"><%= assignation.status.capitalize %></span>
 
-               <%= image_tag("icon-lettre.svg", width: "100%", height: "100%", class: "assignation-icon") %>
-               <%= image_tag("icon-lettre.svg", width: "100%", height: "100%", class: "assignation-icon") %>
+            <%= image_tag("icon-lettre.svg", width: "100%", height: "100%", class: "assignation-icon") %>
+            <%= image_tag("icon-lettre.svg", width: "100%", height: "100%", class: "assignation-icon") %>
           </div>
         </div>
       </div>

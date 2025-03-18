@@ -23,13 +23,11 @@
         <%= link_to new_diagnostic_assignation_path(@diagnostic, doctor_id: doctor.id) do %>
           <li class="diagnostic-specialist-card">
             <div>
-              <h5><%= doctor.first_name.capitalize %></h5>
+              <h5>Dr. <%= doctor.first_name.capitalize %></h5>
               <h5><%= doctor.last_name.capitalize %></h5>
               <h6><%= doctor.specialty.capitalize %></h6>
             </div>
-              <p>
-              <%= doctor.address %>
-              </p>
+              <p><%= doctor.address %></p>
           </li>
         <% end %>
       <% end %>

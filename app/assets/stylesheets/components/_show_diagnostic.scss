@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: $shadow-default;
 }
 
 ul {
@@ -67,7 +67,7 @@ ul {
 .diagnostic-specialist-card p {
   text-align: right;
   font-size: 0.8em;
-  color: black;
+  color: $black;
 }
 
 .diagnostic-specialist-card:active {

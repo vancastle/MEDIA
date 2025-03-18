@@ -21,6 +21,19 @@
     z-index: 10;
   }
 
+  .badge-danger {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 10px;
+  }
+
+  .badge-warning {
+    background-color: #ffc107;
+    color: black;
+    border-radius: 10px;
+  }
+
+
   .status-badge {
     position: absolute;
     top: 0px;

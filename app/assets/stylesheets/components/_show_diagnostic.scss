@@ -40,7 +40,7 @@ ul {
 
 .card-diagnostic-container > a {
   text-decoration: none;
-  color: black;
+  color: $dark;
 }
 
 .address {
@@ -57,9 +57,9 @@ ul {
 .diagnostic-specialist-card p {
   text-align: right;
   font-size: 0.8em;
-  color: grey;
+  color: $grey;
 }
 
 .diagnostic-specialist-card:active {
-  background-color: #8BBFA7;
+  background-color: $dark-green;
 }

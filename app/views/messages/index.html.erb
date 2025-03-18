@@ -1,5 +1,5 @@
 <div class="container2">
-  <%= link_to assignations_path, class: "btn btn-med2" do %>
+  <%= link_to assignation_path(@assignation), class: "btn btn-med2" do %>
       <%= image_tag("icon-chevron-left.svg") %>
   <% end %>
   <% other_user = current_user == @assignation.user ? @assignation.diagnostic.consultation.user : @assignation.user %>

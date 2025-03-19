@@ -1,9 +1,10 @@
 <div class="container2">
-  <%= link_to assignation_path(@assignation), class: "btn btn-med2" do %>
+  <%= link_to assignation_path(@assignation), class: "" do %>
       <%= image_tag("icon-chevron-left.svg") %>
   <% end %>
   <% other_user = current_user == @assignation.user ? @assignation.diagnostic.consultation.user : @assignation.user %>
-  <h4 style="margin-left: 35px; margin-top: 15px;"><%= other_user.name %></h4>
+  <h3><%= other_user.name %></h3>
+  <div></div>
 </div>
 
 <div class="container-fluid chat" style="width: 100%; margin-top: -28px; display: flex; flex-direction: column; height: 79vh;">

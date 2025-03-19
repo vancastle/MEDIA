@@ -49,6 +49,10 @@ ul {
 
 }
 
+.card-diagnostic-container:active {
+  border: 1px solid $green;
+}
+
 .diagnostic-specialist-card > li {
   display: flex;
 }
@@ -76,10 +80,6 @@ ul {
   color: $black;
 }
 
-.diagnostic-specialist-card:active {
-  background-color: $green-light;
-}
-
 h2 {
   padding-bottom: 0.5em;
   font-size: 1.3em;
@@ -98,5 +98,3 @@ h2 {
 .radius {
   border-radius: 0.8em;
 }
-
-

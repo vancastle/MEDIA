@@ -36,7 +36,8 @@ class AssignationsController < ApplicationController
   private
 
   def filter(assignations)
-    assignations.select { |assignation| assignation.diagnostic.consultation.user == current_user }
+    doctor_assignations = assignations.select { |assignation| assignation.diagnostic.consultation.user == current_user }
+    doctor_assignations.sort_by { |assignation| assignation.created_at }.reverse!
   end
 
   def set_assignation

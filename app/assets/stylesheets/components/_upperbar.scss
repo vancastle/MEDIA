@@ -27,32 +27,18 @@
   text-transform: uppercase;
 }
 
-.btn-action-in {
-  background-color: #9BD4E7;
-  color: white;
-  padding: 8px;
-  border-radius: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
+.upperbar {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
+  padding: 0px 40px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-top: 0%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
   width: 100%;
-  box-sizing: border-box;
-
-}
-
-.btn-action-out {
-  background-color: #EC6868;
-  color: white;
-  padding: 8px;
-  border-radius: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-
-}
-
-.dropdown-menu.show {
-  padding: 0px;
 }

@@ -34,3 +34,33 @@
   border-bottom: 2px solid transparent;
   border-radius: 8px;
 }
+
+.btn-action-in {
+  background-color: #9BD4E7;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+
+.btn-action-out {
+  background-color: #EC6868;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+
+.dropdown-menu.show {
+  padding: 0px;
+}

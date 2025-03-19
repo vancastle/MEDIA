@@ -6,26 +6,28 @@
   <div></div>
 </div>
 
-<h1 class="textfront">Vos rendez-vous</h1>
+<div class="">
+  <h1 class="textfront">Vos rendez-vous</h1>
 
-<section class="cards-container">
-  <% @consultations.each do |consultation| %>
-    <%= link_to new_consultation_diagnostic_path(consultation), class: "consultation-link" do %>
-      <div class="card custom-card-consultation">
-        <div class="card-body">
-          <div class="consultation-card">
-              <div class="consultation-details">
-                <h3><%= consultation.patient.name %></h3>
-                <p class="age"><%= calculate_age(consultation.patient.date_of_birth) %> ans</p>
-              </div>
-              <p class="time"><%= consultation.starts_at.strftime("%Hh%M") %></p>
+  <section class="cards-container">
+    <% @consultations.each do |consultation| %>
+      <%= link_to new_consultation_diagnostic_path(consultation), class: "consultation-link" do %>
+        <div class="card custom-card-consultation">
+          <div class="card-body">
+            <div class="consultation-card">
+                <div class="consultation-details">
+                  <h3><%= consultation.patient.name %></h3>
+                  <p class="age"><%= calculate_age(consultation.patient.date_of_birth) %> ans</p>
+                </div>
+                <p class="time"><%= consultation.starts_at.strftime("%Hh%M") %></p>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
-</section>
+  </section>
 
-<div class="button-container w-100">
-  <%= link_to "Rechercher un patient", patients_path, class: "btn btn-med w-95 mb-4" %>
+  <div class="button-container w-100">
+    <%= link_to "Rechercher un patient", patients_path, class: "btn btn-med w-95 mb-4" %>
+  </div>
 </div>

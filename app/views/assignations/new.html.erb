@@ -38,17 +38,17 @@
   <div class="modal-dialog card-modal" role="document">
     <div class="modal-content radius">
       <div class="modal-header d-flex justify-content-center border-bottom-0">
-        <h5 class="modal-title text-center" id="exampleModalLabel">Contacter Dr <%= @doctor.first_name %> <%= @doctor.last_name %></h5>
+        <h5 class="modal-title text-center" id="exampleModalLabel">Contacter Dr <%= @doctor.first_name.capitalize %> <%= @doctor.last_name.capitalize %></h5>
       </div>
       <div class="modal-body">
         Le dossier du patient sera partagé avec le spécialiste
       </div>
       <div class="modal-footer d-flex justify-content-around border-top-0">
         <button type="button" class="btn-med" data-dismiss="modal">Annuler</button>
-        <div class="m-0">
+        <div class="m-0 mb-3">
           <%= simple_form_for [@diagnostic, @assignation] do |form| %>
             <%= form.input :doctor_id, as: :hidden, :input_html => { value: @doctor.id } %>
-            <%= form.submit 'Contacter', class: 'btn-med'%><%#  class: 'btn-med' %>
+            <%= form.submit 'Contacter', class: 'btn-med'%>
           <% end %>
         </div>
       </div>

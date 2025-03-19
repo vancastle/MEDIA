@@ -7,16 +7,16 @@
 </div>
 
 <section class="cards-container">
-  <div class="card custom-card-accepted">
+  <div class="card custom-card-accepted <%= border_badge_for_status(@assignation) %>">
     <div class="card-body">
       <div class="accepted-card">
         <div class="accepted-details">
           <h3>Dr. <%= @doctor.first_name.capitalize %> <%= @doctor.last_name.capitalize %></h3>
           <h6><%= @doctor.specialty.capitalize %></h6>
         </div>
-        <span class="badge <%= status_class(@assignation) %> status-badge"><%= @assignation.status.capitalize %></span>
+        <span class="badge <%= color_badge_for_status(@assignation) %> status-badge"><%= @assignation.status.capitalize %></span>
       </div>
-      <%= link_to "Contacter", assignation_messages_path(@assignation), class: "fs-6 btn-small w-100" %>
+      <%= link_to "Contacter", assignation_messages_path(@assignation), class: "fs-6 btn-med w-100" %>
     </div>
   </div>
 

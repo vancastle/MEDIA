@@ -14,7 +14,7 @@
     <% patient = consultation.patient %>
 
     <%= link_to assignation_path(assignation.id), class: "assignation-link" do %>
-      <div class="card custom-card-assignation">
+      <div class="card custom-card-assignation <%= border_badge_for_status(assignation) %>">
         <div class="card-body">
           <div class="assignation-card">
             <div class="assignation-details">
@@ -24,7 +24,7 @@
               <p><strong>Rendez-vous le </strong><%= consultation.starts_at.strftime("%d/%m/%Y %H:%M") %></p>
             </div>
 
-            <span class="badge <%= status_class(assignation) %> status-badge"><%= assignation.status.capitalize %></span>
+            <span class="badge <%= color_badge_for_status(assignation) %> status-badge"><%= assignation.status.capitalize %></span>
 
             <%= image_tag("icon-lettre.svg", width: "100%", height: "100%", class: "assignation-icon") %>
           </div>

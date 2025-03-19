@@ -48,7 +48,7 @@
         <div class="m-0">
           <%= simple_form_for [@diagnostic, @assignation] do |form| %>
             <%= form.input :doctor_id, as: :hidden, :input_html => { value: @doctor.id } %>
-            <%= form.submit 'Contacter', class: 'btn-med'%><%#  class: 'btn-med' %>
+            <%= form.submit 'Contacter', class: 'btn-med'%>
           <% end %>
         </div>
       </div>

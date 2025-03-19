@@ -3,7 +3,7 @@ module ApplicationHelper
     Date.today.year - birthdate.year
   end
 
-  def status_class(assignation)
+  def color_badge_for_status(assignation)
     case assignation.status.downcase
     when 'accepted'
       return 'badge-success'
@@ -13,4 +13,16 @@ module ApplicationHelper
       return 'badge-warning'
     end
   end
+
+  def border_badge_for_status(assignation)
+    case assignation.status.downcase
+    when 'accepted'
+      return 'card-success'
+    when 'declined'
+      return 'card-danger'
+    when 'pending'
+      return 'card-warning'
+    end
+  end
+
 end

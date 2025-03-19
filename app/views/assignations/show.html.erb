@@ -33,7 +33,7 @@
               <p class="fw-bold"><%= @patient.first_name.capitalize %> <%= @patient.last_name.capitalize %></p>
             </div>
             <div class="col-12 text-start border-bottom pb-2 mb-2">
-              <p><i class="fa-solid fa-cake-candles m-2"></i> <%= @patient.date_of_birth.strftime("%d%m%Y") %></p>
+              <p><i class="fa-solid fa-cake-candles m-2"></i> <%= @patient.date_of_birth.strftime("%d/%m/%Y") %></p>
             </div>
             <div class="col-12 text-start border-bottom pb-2 mb-2">
               <p><i class="fa-sharp fa-solid fa-mars-and-venus m-2"></i><%= @patient.gender %></p>

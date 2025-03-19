@@ -1,12 +1,16 @@
+* {
+  color: $black;
+}
+
 .card-diagnostic {
   padding: 1em;
   margin: 1em;
   border-radius: 0.8em;
-  background-color: white;
+  background-color: $white;
   display: flex;
   flex-direction: column;
   text-align: left;
-  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: $shadow-default;
 }
 
 ul {
@@ -16,12 +20,6 @@ ul {
       text-decoration: none;
       color: inherit;
     }
-}
-
-.header-diagnostic {
-  font-size: 1rem;
-  padding-top: 4px;
-  border-bottom: 0.5px solid grey;
 }
 
 
@@ -35,14 +33,13 @@ ul {
 .card-diagnostic-container {
   padding: 1em 1em ;
   border-radius: 0.8em;
-  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: $shadow-default;
   margin-top: 1em;
-  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
   justify-content: space-between;
-  background-color: white;
+  background-color: $white;
 
   h6 {
-    color: grey;
+    color: $gray;
   }
 
 }
@@ -70,9 +67,28 @@ ul {
 .diagnostic-specialist-card p {
   text-align: right;
   font-size: 0.8em;
-  color: black;
+  color: $black;
 }
 
 .diagnostic-specialist-card:active {
-  background-color: $green-dark;
+  background-color: $green-light;
+}
+
+h2 {
+  padding-bottom: 0.5em;
+  font-size: 1.3em;
+  border-bottom: 1px solid $green-dark;
+}
+
+// modale de contacter
+
+.card-modal {
+  padding: 1em;
+  margin: 1em;
+  margin-top: 30vh;
+  text-align: center;
+}
+
+.radius {
+  border-radius: 0.8em;
 }

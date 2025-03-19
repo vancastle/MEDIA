@@ -23,7 +23,9 @@
 
   <body data-current-user-id="<%= current_user ? current_user.id : "" %>">
     <div class="page-container">
+      <% unless @hide_upperbar %>
       <%= render "shared/upperbar" %>
+      <% end %>
       <main id="main-content">
         <%= yield %>
       </main>

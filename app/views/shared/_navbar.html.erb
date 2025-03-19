@@ -1,16 +1,23 @@
 <div class="navbar">
-  <div class="navbar-links">
+  <div class="navbar-links" style="align-items: center;">
     <div>
-      <%= link_to image_tag("icon-diag.svg", width: "100%", height: "100%"), new_diagnostic_path %>
+      <%= link_to image_tag("icon-diag.svg", width: "150%", height: "150%"), new_diagnostic_path %>
     </div>
     <div>
-      <%= link_to image_tag("icon-echanges-black.svg", width: "100%", height: "100%"), assignations_path  %>
+      <%= link_to image_tag("icon-echanges-black.svg", width: "150%", height: "150%"), assignations_path  %>
     </div>
     <div>
-      <%= link_to image_tag("icon-dossier-patient-black.svg", width: "100%", height: "100%"), patients_path %>
+      <%= link_to image_tag("icon-dossier-patient-black.svg", width: "150%", height: "150%"), patients_path %>
     </div>
-    <div>
-      <%= link_to image_tag("icon-profil.svg", width: "100%", height: "100%"), "#" %>
+    <div class="dropdown dropup">
+      <%= link_to image_tag("icon-profil.svg", width: "100%", height: "100%"), "#", class: "dropdown-toggle", data: { bs_toggle: "dropdown" }, aria: { expanded: "false" } %>
+      <div class="dropdown-menu dropdown-menu-end" style="left: -65px;">
+      <% if user_signed_in? %>
+      <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item btn-action-out" %>
+      <% else %>
+      <%= link_to "Login", new_user_session_path, class: "dropdown-item btn-action-in" %>
+      <% end %>
+      </div>
     </div>
   </div>
 </div>

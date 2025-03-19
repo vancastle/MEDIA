@@ -3,14 +3,18 @@
 }
 
 .card-diagnostic {
-  padding: 1em;
-  margin: 1em;
+  padding: 1.2em;
+  margin: 1.2em;
+
   border-radius: 0.8em;
   background-color: $white;
   display: flex;
   flex-direction: column;
   text-align: left;
   box-shadow: $shadow-default;
+  li {
+    margin-bottom: 1.2em;
+  }
 }
 
 ul {
@@ -21,6 +25,7 @@ ul {
       color: inherit;
     }
 }
+
 
 
 .diagnostic-specialist-card {
@@ -93,3 +98,5 @@ h2 {
 .radius {
   border-radius: 0.8em;
 }
+
+

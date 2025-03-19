@@ -46,4 +46,24 @@
     padding: 0px;
     color: $gray;
   }
+
+  button {
+    color: white;
+    font-size: 14px;
+  }
+}
+
+.patient-card-list {
+  padding: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 0.8em;
+  margin-bottom: 0.5em;
+  border-radius: 0.8em;
+  box-shadow: $shadow-default;
+  background-color: white;
+}
+
+.list-group-flush {
+  border-radius: 0.8em;
 }

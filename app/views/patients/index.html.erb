@@ -1,23 +1,18 @@
 <div class="container2">
 
-  <div class="icon">
     <%= link_to root_path do %>
       <%= image_tag("icon-chevron-left.svg") %>
     <% end %>
-  </div>
 
-  <h3>Liste des patients</h3>
 
-  <div class="icon">
-    <%= link_to image_tag("icon-search.svg"), "#" %>
-  </div>
-
+    <h3>Liste des patients</h3>
+  <div></div>
 </div>
 
 <div class="">
   <ul class="list-group list-group-flush" >
     <% @patients.each do |patient| %>
-      <li class="list-group-item card-bg">
+      <li class="list-group-item patient-card-list">
 
         <div class="row patient-card">
           <div class="col-8">
@@ -31,7 +26,7 @@
             <div>
               <%= link_to patient_path(patient) do %>
                 <button class="btn-small">
-                  détails
+                  Détails
                 </button>
               <% end %>
             </div>

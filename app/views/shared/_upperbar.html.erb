@@ -4,17 +4,5 @@
       <%= link_to root_path, class: "navbar-brand brand-bold" do %>
         <%= 'MED-IA' %>
       <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="dropdown-menu dropdown-menu-end">
-      <% if user_signed_in? %>
-          <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item btn-action-out" %>
-      <% else %>
-          <%= link_to "Login", new_user_session_path, class: "dropdown-item btn-action-in" %>
-      <% end %>
-    </div>
   </div>
 </nav>

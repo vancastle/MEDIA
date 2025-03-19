@@ -2,24 +2,17 @@
 <% title = patient.gender == "male" ? "M." : "Mme." %>
 
 <div class="container2 " style="border: none;">
-
-  <div class="icon" style="margin-left: 10px; margin-bottom: 25px; border: none;">
     <%= link_to root_path do %>
       <%= image_tag("icon-chevron-left.svg", width: "32px", height: "32px") %>
     <% end %>
-  </div>
-  <h3>Résultats pour <%= title %> <%= patient.name %></h3>
-
-  <div class="icon" style="margin-right: 40px; margin-bottom: 25px; border: none;">
-    <%# link_to image_tag("icon-search.svg", width: "32px", height: "32px"), "#" %>
-  </div>
-
+    <h3>Résultats pour <%= title %> <%= patient.name %></h3>
+  <div></div>
 </div>
+
 
 <section data-controller="diagnostic">
   <% @diagnostics.each_with_index do |diagnostic, index| %>
-    <%  doctors = User.where(specialty: diagnostic.specialty).limit(3) %>
-
+   <%  doctors = User.where(specialty: diagnostic.specialty).limit(3) %>
 
     <div class="">
       <div class="card-diagnostic">
@@ -47,9 +40,8 @@
                       <li >
                         <div>
                           <h5>Dr <%= doctor.first_name.capitalize %>
-                              <%= doctor.last_name.capitalize %>
+                                 <%= doctor.last_name.capitalize %>
                           </h5>
-
                           <h6><%= doctor.specialty.capitalize %></h6>
                         </div>
                         <div class="address">

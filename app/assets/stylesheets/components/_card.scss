@@ -5,39 +5,6 @@
   background-color: white;
 }
 
-.assignation-card {
-  position: relative;
-  justify-content: flex-start;
-  align-items: flex-start;
-  display: flex;
-
-
-  img {
-    z-index: 10;
-    width: 30px;
-    height: 30px;
-  }
-
-  .badge-success {
-    background-color: $green;
-    color: white;
-    border-radius: 10px;
-
-  }
-
-  .badge-danger {
-    background-color: #dc3545;
-    color: white;
-    border-radius: 10px;
-  }
-
-  .badge-warning {
-    background-color: #ffc107;
-    color: black;
-    border-radius: 10px;
-  }
-}
-
 .age {
   margin: 0;
   font-size: 14px;
@@ -50,14 +17,4 @@
   font-size: 14px;
   font-weight: bold;
   margin: 0;
-}
-
-.card-bg {
-  padding: 1em;
-  margin-left: 1em;
-  margin-right: 1em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  border-radius: 0.8em;
-  box-shadow: $shadow-default;
 }

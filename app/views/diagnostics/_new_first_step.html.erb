@@ -3,11 +3,11 @@
     <%= image_tag("icon-chevron-left.svg") %>
   <% end %>
   <h3>Nouvelle recherche</h3>
-  <div></div>
+  <div><%= image_tag("icon-blank.svg")%></div>
 </div>
 
 <div class="">
-  <h1 class="textfront">Vos rendez-vous</h1>
+  <h1 class="textfront" style="color: #37A271">Vos rendez-vous</h1>
 
   <section class="cards-container">
     <% @consultations.each do |consultation| %>

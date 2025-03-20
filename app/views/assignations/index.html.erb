@@ -24,7 +24,7 @@
               <p><strong>Contacté le </strong><%= consultation.starts_at.strftime("%d/%m/%Y %H:%M") %></p>
             </div>
 
-            <span class="badge <%= color_badge_for_status(assignation) %> status-badge"><%= assignation.status.capitalize %></span>
+            <span class="badge <%= color_badge_for_status(assignation) %> status-badge"><%= to_french(assignation.status) %></span>
 
             <%= image_tag("icon-lettre.svg", width: "100%", height: "100%", class: "assignation-icon") %>
           </div>

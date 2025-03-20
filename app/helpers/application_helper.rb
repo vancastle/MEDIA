@@ -25,4 +25,15 @@ module ApplicationHelper
     end
   end
 
+  def to_french(word)
+    if word.downcase == "accepted"
+      return "Acceptée"
+    elsif word.downcase == "pending"
+      return "En attente"
+    elsif word.downcase == "declined"
+      return "Refusée"
+    else
+      return word
+    end
+  end
 end

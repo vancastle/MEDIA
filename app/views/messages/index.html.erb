@@ -15,7 +15,7 @@
   </div>
   <%= simple_form_for [@assignation, @message], html: {class: "d-flex align-items", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }, style: "position: sticky; bottom: 0; "} do |f| %>
     <% other_user = current_user == @assignation.user ? @assignation.diagnostic.consultation.user : @assignation.user %>
-    <%= f.input :content, label: false, placeholder: "Message à #{other_user.name}", wrapper_html: {class: "flex-grow-1"}, input_html: {style: "border-radius: 0.8rem; "} %>
+    <%= f.input :content, label: false, placeholder: "Message à #{other_user.name}", wrapper_html: {class: "flex-grow-1"}, input_html: {style: "border-radius: 0.8rem; background-color: #FCFCFC "} %>
     <%= f.submit "Envoyer", style: "background-color: #247E54; border: 1px solid #d3d3d3; border-radius: 40px;; color: white; margin-left: 10px; height: 71px;", class: "btn-med" %>
   <% end %>
 </div>

@@ -1,9 +1,10 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 // Define fonts for body and headers
 $body-font: "Roboto", "sans-serif";
 $headers-font: "Roboto", "sans-serif";
+
+$title-font: "Roboto Slab", serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -14,4 +15,3 @@ $headers-font: "Roboto", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
-

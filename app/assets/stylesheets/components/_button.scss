@@ -10,18 +10,25 @@
   align-items: center;
   text-align: center;
   margin-bottom: 1.5em;
-  margin-top: 5em;
+  margin-top: 4em;
   color: black;
   padding: 10px;
   font-size: 1em;
+  color: $green-dark;
 }
 
 .container2 > h3 {
-  font-size: 1.2em;
+  font-size: 1em;
   margin: 0px;
   color: $black;
   font-weight: 400;
+  color: $green-dark;
 }
+
+.retour {
+  color: $green-dark;
+}
+
 // fin navbar parcours diagnostic
 
 .container2 h1 {

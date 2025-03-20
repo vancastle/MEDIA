@@ -42,11 +42,10 @@ ul {
   margin-top: 1em;
   justify-content: space-between;
   background-color: $white;
+}
 
-  h6 {
-    color: $gray;
-  }
-
+.description {
+  color: $gray;
 }
 
 .card-diagnostic-container:active {
@@ -90,7 +89,7 @@ h2 {
 
 // margin pour assignation
 .margin {
-  margin-top: 15vh;
+  margin-top: 8vh;
 }
 
 // modale de contacter

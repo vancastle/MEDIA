@@ -3,19 +3,19 @@
       <%= image_tag("icon-chevron-left.svg") %>
   <% end %>
   <% other_user = current_user == @assignation.user ? @assignation.diagnostic.consultation.user : @assignation.user %>
-  <h3><%= other_user.name %></h3>
-  <div></div>
+  <h3>Dr. <%= other_user.name %></h3>
+  <div><%= image_tag("icon-blank.svg")%></div>
 </div>
 
-<div class="container-fluid chat" style="width: 100%; margin-top: -28px; display: flex; flex-direction: column; height: 79vh;">
+<div class="container-fluid chat" style="width: 100%; margin-top: -28px; display: flex; flex-direction: column; height: 79vh; background-color: #F2F4F5">
   <div id="messages" class="messages" style="flex-grow: 1; overflow-y: auto;">
     <% @assignation.messages.each do |message| %>
       <%= render "message", message: message, user: current_user %>
     <% end %>
   </div>
-  <%= simple_form_for [@assignation, @message], html: {class: "d-flex align-items", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }, style: "position: sticky; bottom: 0; background: white;"} do |f| %>
+  <%= simple_form_for [@assignation, @message], html: {class: "d-flex align-items", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }, style: "position: sticky; bottom: 0; "} do |f| %>
     <% other_user = current_user == @assignation.user ? @assignation.diagnostic.consultation.user : @assignation.user %>
-    <%= f.input :content, label: false, placeholder: "Message à #{other_user.name}", wrapper_html: {class: "flex-grow-1"}, input_html: {style: "border-radius: 0.8rem"} %>
-    <%= f.submit "Envoyer", style: "background-color: #247E54; border: 1px solid #d3d3d3; border-radius: 0.8rem; color: white; margin-left: 10px; height: 71px;" %>
+    <%= f.input :content, label: false, placeholder: "Message à #{other_user.name}", wrapper_html: {class: "flex-grow-1"}, input_html: {style: "border-radius: 0.8rem; "} %>
+    <%= f.submit "Envoyer", style: "background-color: #247E54; border: 1px solid #d3d3d3; border-radius: 40px;; color: white; margin-left: 10px; height: 71px;", class: "btn-med" %>
   <% end %>
 </div>

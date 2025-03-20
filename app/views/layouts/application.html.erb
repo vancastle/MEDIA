@@ -41,7 +41,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body data-current-user-id="<%= current_user ? current_user.id : "" %>">
+  <body style="background-color: #B7C0BC;", data-current-user-id="<%= current_user ? current_user.id : "" %>">
     <div class="page-container">
       <% unless @hide_upperbar %>
       <%= render "shared/upperbar" %>

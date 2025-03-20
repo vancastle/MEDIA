@@ -81,6 +81,7 @@ ul {
 }
 
 h2 {
+  font-family: $title-font;
   padding-bottom: 0.5em;
   font-size: 1.3em;
   border-bottom: 1px solid $green-dark;
@@ -102,4 +103,10 @@ h2 {
 
 .radius {
   border-radius: 0.8em;
+  border: 1px solid $green-dark;
+  padding: 0.5em;
+}
+
+.modal-title {
+  font-family: $title-font;
 }
